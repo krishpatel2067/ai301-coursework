@@ -36,7 +36,7 @@ will fail eval issues designed around that family.
 | ----------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------- | --------- |
 | maintainer-active | days to first owner/member/collaborator comment        | at least 20% issues get a response                                                                | required  |
 | repo-in-use       | archived, last push to any branch, latest release date | latest release date within the last year, last push within the last 6 months, repo _not_ archived | required  |
-| unclaimed         | issue assignees                                        | _no_ assignees listed                                                                             | required  |
+| unclaimed         | issue assignees, comments                              | _no_ assignees listed and _no_ "I can work on this"-type comments (ignore other comments)         | required  |
 | policy-allows-ai  | `CONTRIBUTION.md` > "Generative AI" section            | AI _must not_ be banned, but permitted use with conditions is ok                                  | required  |
 | scope-fits        | issue labels, `scope.md` fit profile                   | "good first issue" label _and_ adheres to fit profile                                             | preferred |
 
