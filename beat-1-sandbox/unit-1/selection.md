@@ -41,20 +41,54 @@ Quote source text directly in each field below. Paraphrase does not satisfy them
 
 **Run history**
 
-[The agreement score of each run you did, in order. A single run is a complete answer if
+<!-- [The agreement score of each run you did, in order. A single run is a complete answer if
 only one run occurred. **The last score in your list must match the agreement line in the
-`eval-run.txt` you committed** — that file is the record of your final run.]
+`eval-run.txt` you committed** — that file is the record of your final run.] -->
+
+```plaintext
+agreement: 12/20 scored items
+agreement: 3/8 scored items
+agreement: 2/5 scored items
+agreement: 0/1 scored items
+agreement: 0/1 scored items
+agreement: 0/1 scored items
+agreement: 1/1 scored items
+agreement: 15/20 scored items
+agreement: 2/3 scored items
+agreement: 1/1 scored items
+agreement: 16/20 scored items
+agreement: 1/2 scored items
+agreement: 1/1 scored items
+agreement: 15/20 scored items
+agreement: 3/5 scored items
+agreement: 1/2 scored items
+agreement: 1/1 scored items
+agreement: 18/20 scored items
+agreement: 1/1 scored items
+agreement: 19/20 scored items
+```
 
 **Issue analysis**
 
-[One scored issue, identified by id (`issue-01` through `issue-20`; the `calib-`
+<!-- [One scored issue, identified by id (`issue-01` through `issue-20`; the `calib-`
 issues are not scored). State your rubric's decision, the gold label, and the
-reasoning that produced your rubric's result.]
+reasoning that produced your rubric's result.] -->
+
+**Issue**: `issue-01`
+**Rubric decision**: `accept`
+**Gold label**: `accept`
+**Reasoning**: all required categories (`maintainer-active`, `repo-in-use`, `not-worked-on`, `policy-allows-ai`) passed since the repo indeed has an active maintainer (a comment on #16275 within 33 days), the repo is in active use (latest release is 2026-07-31), no one has worked on it (no assignees, claim comments, linked PRs), and AI use is allowed ("generative AI tools welcome").
 
 **Check rationale**
 
-[One check from the `rubric.md` uploaded to `tools/issue-select/`, quoted as it is
-currently written, with the reasoning behind its current form.]
+<!-- [One check from the `rubric.md` uploaded to `tools/issue-select/`, quoted as it is
+currently written, with the reasoning behind its current form.] -->
+
+**Name**: `policy-allows-ai`
+**Evidence**: `CONTRIBUTION.md` > "Generative AI" section
+**Pass condition**: AI _must not_ be banned, but permitted use with conditions is ok
+**Weight**: required
+**Reasoning**: Pointing specifically to `CONTRIBUTION.md` then to a "Generative AI" section works since those are standard filenames/section names for contributor-oriented AI use info. AI shouldn't be banned because this course requires AI-assisted contribution, but using the tool responsibly is needed - both in this course and in OSS, so conditions are fine. The weight is required since this check should be used to filter issues.
 
 **Trade-offs**
 
@@ -62,6 +96,8 @@ currently written, with the reasoning behind its current form.]
 result it changes, a canary you re-ran with `--only`, a case you accept it will miss, or a
 stated reason nothing changed elsewhere. "Nothing changed, and here is how I know" earns
 the point in full when the reason follows.]
+
+While this `policy-allows-ai` check didn't throw off my rubric from the gold labels, there is a small edge case that it will miss: a highly restrictive AI-use policy whose adherence takes a long time, is tedious, etc. For example, one may require that all prompts and responses be explicitly disclosed along with the model and a link to the chat. This sort of bookkeeping overhead would disqualify an issue (or repo entirely) in my mind, which is difficult to codify in a rubric.
 
 ---
 
