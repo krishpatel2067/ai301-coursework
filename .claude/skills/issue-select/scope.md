@@ -36,4 +36,9 @@ you want to avoid. The skill uses this only to RANK the issues your
 rubric accepts, never to change a verdict: fit cannot rescue an issue
 your rubric rejects, and cannot sink one it accepts. -->
 
-(Write a few sentences here.)
+In order of most comfortable to least comfortable:
+
+- Languages: Python, JavaScript, Java, SQL, Bash, Golang, C++, C
+- Tools & Technologies: Node.js, React, Express, Vue, FastAPI
+
+I've never contributed to OSS before, and I want to start small to get it right first, then build up slowly.
