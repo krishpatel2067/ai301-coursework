@@ -1,53 +1,53 @@
-# eval run written by run_eval.py at 2026-09-19T19:16:04Z
+# eval run written by run_eval.py at 2026-09-19T19:33:10Z
 # model: sonnet (pinned)
 # graded: /home/theca/repos/GitHub/CodePath/AI301/ai301-coursework/.claude/skills/issue-select
 # packages: 20 scored
-#   rubric.md  sha256:4f34d16c1db1c11b
+#   rubric.md  sha256:365b0046ca86ef2c
 #   SKILL.md  sha256:bbb295bf984701fd
 #
 grading 20 bundle(s) with rubric.md, model sonnet, 5 worker(s)...
-  issue-01: accept
   issue-02: reject
-  issue-04: accept
+  issue-01: accept
+  issue-04: reject
   issue-03: reject
-  issue-05: reject
   issue-06: reject
-  issue-08: reject
   issue-07: reject
+  issue-05: reject
+  issue-08: reject
   issue-09: reject
-  issue-11: accept
-  issue-13: accept
-  issue-12: reject
+  issue-11: reject
   issue-10: reject
-  issue-15: reject
+  issue-12: reject
+  issue-13: reject
   issue-16: accept
   issue-14: accept
-  issue-17: reject
   issue-18: reject
-  issue-20: accept
-  issue-19: accept
+  issue-17: reject
+  issue-15: reject
+  issue-20: reject
+  issue-19: reject
 
 item      gold    verdict  agree  note
 issue-01  accept  accept   yes    
 issue-02  reject  reject   yes    
 issue-03  reject  reject   yes    
-issue-04  accept  accept   yes    
+issue-04  accept  reject   NO     failed: clear-description, scope-fits (preferred)
 issue-05  reject  reject   yes    
-issue-06  accept  reject   NO     failed: repo-in-use
+issue-06  accept  reject   NO     failed: repo-in-use, clear-description
 issue-07  reject  reject   yes    
 issue-08  reject  reject   yes    
-issue-09  accept  reject   NO     failed: unclaimed
+issue-09  accept  reject   NO     failed: unclaimed, clear-description
 issue-10  reject  reject   yes    
-issue-11  accept  accept   yes    
+issue-11  accept  reject   NO     failed: clear-description, scope-fits (preferred)
 issue-12  reject  reject   yes    
-issue-13  reject  accept   NO     graded accept
+issue-13  reject  reject   yes    
 issue-14  accept  accept   yes    
 issue-15  reject  reject   yes    
 issue-16  accept  accept   yes    
 issue-17  reject  reject   yes    
 issue-18  reject  reject   yes    
-issue-19  accept  accept   yes    
-issue-20  reject  accept   NO     graded accept
+issue-19  accept  reject   NO     failed: clear-description, scope-fits (preferred)
+issue-20  reject  reject   yes    
 
-categories: claimed 3/4  clear-accept 6/8  dead-repo 3/3  policy 1/1  scope 3/4
-agreement: 16/20 scored items  (bar: 18/20: below the bar)
+categories: claimed 4/4  clear-accept 3/8  dead-repo 3/3  policy 1/1  scope 4/4
+agreement: 15/20 scored items  (bar: 18/20: below the bar)
