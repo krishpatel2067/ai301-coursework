@@ -32,9 +32,13 @@ will fail eval issues designed around that family.
 
 ## Checks
 
-| Check | Evidence | Pass condition | Weight |
-|---|---|---|---|
-|  |  |  |  |
+| Check             | Evidence                                               | Pass condition                                                                                   | Weight    |
+| ----------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | --------- |
+| maintainer-active | days to first owner/member/collaborator comment        | at least 60% issues get <= 30 day first response                                                 | required  |
+| repo-in-use       | archived, last push to any branch, latest release date | latest release date within the last year, last push within the last 30 days, repo _not_ archived | required  |
+| unclaimed         | issue assignees, any "I can do this"-type comments     | _no_ assignees and _no_ claim comments                                                           | required  |
+| policy-allows-ai  | `CONTRIBUTION.md` > "Generative AI" section            | AI _must not_ be banned, but permitted use with conditions is ok                                 | required  |
+| scope-fits        | issue labels, `scope.md` fit profile                   | "good first issue" label _and_ adheres to fit profile                                            | preferred |
 
 ## Verdict rule
 
@@ -42,3 +46,5 @@ will fail eval issues designed around that family.
 unclear is treated. Example shape (write your own): "accept if every
 required check passes; preferred checks never change the verdict, they
 rank accepted issues; unclear counts as fail." -->
+
+Output verdict "accept" only if all required checks pass, otherwise output verdict "reject". An unclear check is the same as a failed check. Preferred checks only rank the accepted issues, not change the verdict.
