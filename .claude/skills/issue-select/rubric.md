@@ -38,7 +38,6 @@ will fail eval issues designed around that family.
 | repo-in-use       | archived, last push to any branch, latest release date                  | latest release date within the last year, last push within the last 6 months, repo _not_ archived            | required  |
 | unclaimed         | issue assignees, linked PRs, comments                                   | _no_ assignees listed, _no_ open linked PRs, _no_ "I can work on this"-type comments (ignore other comments) | required  |
 | policy-allows-ai  | `CONTRIBUTION.md` > "Generative AI" section                             | AI _must not_ be banned, but permitted use with conditions is ok                                             | required  |
-| clear-description | issue contents (title + body)                                           | must have all pre-submission items checked off, must be clear enough to easily repro/build                   | required  |
 | scope-fits        | issue labels, `scope.md` fit profile                                    | "good first issue" label _and_ adheres to fit profile                                                        | preferred |
 
 ## Verdict rule
