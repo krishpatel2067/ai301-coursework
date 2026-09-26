@@ -1,0 +1,36 @@
+Summary
+
+Mode: live, claim-only draft. claim_comment.md is a claim comment (with a "next steps" plan) — no repro report exists yet in the package, so per the skill's claim-only rule, checks whose evidence lives in a repro report are graded unclear / not yet applicable and excluded from the verdict. The verdict below answers only: is this claim comment ready to post?
+
+Issue #68 (codepath/pathreview-ai301-fa26-s1): KeywordSearcher.index() raises ZeroDivisionError on an empty corpus via rank-bm25; fix should mirror search()'s empty-case handling and drop the xfail marker (manifest id H-01).
+
+Repo policy check: Read docs/CONTRIBUTING.md, README.md, and .github/PULL_REQUEST_TEMPLATE.md for this repo — none mention an AI-use disclosure requirement (no AI_POLICY.md exists in the repo either). So discloses-ai's condition ("if the repo explicitly requires disclosure") isn't triggered.
+
+┌──────────────────┬─────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│      Check       │  Grade  │                                                            Evidence                                                            │
+├──────────────────┼─────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ has-evidence     │ unclear │ not yet applicable: claim-only draft (no environment record or I/O excerpts posted yet)                                        │
+├──────────────────┼─────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ right-target     │ unclear │ not yet applicable: claim-only draft (claim's understanding of the bug — empty-list → ZeroDivisionError in rank-bm25, mirror   │
+│                  │         │ search()'s handling — matches the issue's description exactly, but no version numbers or I/O excerpts exist yet to grade)      │
+├──────────────────┼─────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ followable-comms │ unclear │ not yet applicable: claim-only draft (only a "next steps" plan is present, not executed/followable repro steps)                │
+├──────────────────┼─────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ discloses-ai     │ pass    │ Repo's CONTRIBUTING.md/README/PR template contain no AI-disclosure requirement, so no disclosure is owed regardless of whether │
+│                  │         │  AI was used                                                                                                                   │
+└──────────────────┴─────────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Voice-guide note (doesn't affect verdict): Under "Who I am in threads," the guide asks you to state your intention in choosing this repo ("I'm intimately familiar with this library..."). The draft says "I'd like to address this bug as my first contribution" (covers experience level and next-steps expectation) but never says why this repo/issue. Everything else — conciseness, numbered lists, no qualifiers, contractions, no emojis/casual language/deadlines — follows your rules.
+
+Verdict rationale: Only one check is currently gradable (discloses-ai), and it passes. The claim comment itself is ready to post as a claim; the remaining checks wait on the actual repro report.
+
+{
+  "item": "https://github.com/codepath/pathreview-ai301-fa26-s1/issues/68",
+  "checks": [
+    {"name": "has-evidence", "grade": "unclear", "evidence": "not yet applicable: claim-only draft"},
+    {"name": "right-target", "grade": "unclear", "evidence": "not yet applicable: claim-only draft"},
+    {"name": "followable-comms", "grade": "unclear", "evidence": "not yet applicable: claim-only draft"},
+    {"name": "discloses-ai", "grade": "pass", "evidence": "CONTRIBUTING.md, README.md, and PR template contain no AI-use disclosure requirement, so none is owed"}
+  ],
+  "verdict": "accept"
+}
