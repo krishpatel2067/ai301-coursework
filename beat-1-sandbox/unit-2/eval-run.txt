@@ -1,32 +1,32 @@
-# eval run written by run_eval.py at 2026-09-26T12:32:16Z
+# eval run written by run_eval.py at 2026-09-26T13:03:58Z
 # model: sonnet (pinned)
 # graded: /home/theca/repos/GitHub/CodePath/AI301/ai301-coursework/.claude/skills/repro-check
 # packages: 20 scored
-#   rubric.md  sha256:0002909f1e4aaf3d
+#   rubric.md  sha256:296b45b042d67ef8
 #   evidence-guide.md  sha256:800cd57d76fff6d5
 #   SKILL.md  sha256:094c7ec26a0f22ed
 #
-grading 20 package(s) with rubric.md + evidence-guide.md, model sonnet, 5 worker(s)...
+grading 20 package(s) with rubric.md + evidence-guide.md, model sonnet, 12 worker(s)...
+  pkg-09: accept
+  pkg-10: accept
   pkg-04: reject
   pkg-01: accept
-  pkg-02: reject
-  pkg-03: accept
   pkg-06: reject
   pkg-05: accept
   pkg-07: accept
-  pkg-09: accept
+  pkg-03: accept
+  pkg-12: accept
   pkg-11: accept
   pkg-08: reject
-  pkg-10: accept
+  pkg-02: reject
+  pkg-15: reject
   pkg-13: reject
   pkg-16: reject
-  pkg-15: reject
   pkg-14: reject
-  pkg-12: reject
   pkg-18: reject
-  pkg-17: reject
-  pkg-19: reject
   pkg-20: reject
+  pkg-19: reject
+  pkg-17: reject
 
 item    gold    verdict  agree  note
 pkg-01  accept  accept   yes    
@@ -40,7 +40,7 @@ pkg-08  reject  reject   yes
 pkg-09  accept  accept   yes    
 pkg-10  accept  accept   yes    
 pkg-11  accept  accept   yes    
-pkg-12  accept  reject   NO     failed: right-target
+pkg-12  accept  accept   yes    
 pkg-13  reject  reject   yes    
 pkg-14  reject  reject   yes    
 pkg-15  reject  reject   yes    
@@ -50,5 +50,5 @@ pkg-18  reject  reject   yes
 pkg-19  reject  reject   yes    
 pkg-20  reject  reject   yes    
 
-categories: clear-accept 7/8  disclosure 1/1  no-evidence 4/4  unfollowable-comms 3/3  wrong-target 4/4
-agreement: 19/20 scored items  (bar: 18/20: PASS)
+categories: clear-accept 8/8  disclosure 1/1  no-evidence 4/4  unfollowable-comms 3/3  wrong-target 4/4
+agreement: 20/20 scored items  (bar: 18/20: PASS)
