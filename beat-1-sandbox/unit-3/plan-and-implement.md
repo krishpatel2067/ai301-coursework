@@ -69,15 +69,116 @@ While I'm certain that adding a guard that retains empty chunks won't cause any 
 
 **Branch**
 
-[The name of the branch you built the change on, exactly as it appears in your fork. The
+<!-- [The name of the branch you built the change on, exactly as it appears in your fork. The
 naming shape is a type prefix, then the issue number, then a short description. **The issue
 number in the branch name must be the number of the issue you claimed** — a name carrying
-any other number does not satisfy this field.]
+any other number does not satisfy this field.] -->
+
+`fix/68-zero-division-error`
 
 **Evidence**
 
-[Your Unit 2 reproduction steps re-run against the built change: the before, then the
-after. Paste both, including the commands you ran and their output.]
+<!-- [Your Unit 2 reproduction steps re-run against the built change: the before, then the
+after. Paste both, including the commands you ran and their output.] -->
+
+Before:
+
+Run `python -c 'from rag.retriever.keyword_search import KeywordSearcher; searcher = KeywordSearcher(); searcher.index([])'`:
+
+```plaintext
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "{system path}/pathreview-ai301-fa26-s1/rag/retriever/keyword_search.py", line 25, in index
+    self.bm25 = BM25Okapi(tokenized_corpus)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "{system path}/pathreview-ai301-fa26-s1/.venv/lib/python3.12/site-packages/rank_bm25.py", line 83, in __init__
+    super().__init__(corpus, tokenizer)
+  File "{system path}/pathreview-ai301-fa26-s1/.venv/lib/python3.12/site-packages/rank_bm25.py", line 27, in __init__
+    nd = self._initialize(corpus)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "{system path}/pathreview-ai301-fa26-s1/.venv/lib/python3.12/site-packages/rank_bm25.py", line 52, in _initialize
+    self.avgdl = num_doc / self.corpus_size
+                 ~~~~~~~~^~~~~~~~~~~~~~~~~~
+ZeroDivisionError: division by zero
+```
+
+Run `pytest -v tests/unit/test_keyword_search.py`:
+
+```plaintext
+================================================= test session starts ==================================================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- {system path}/pathreview-ai301-fa26-s1/.venv/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default'
+benchmark: 5.3.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: {system path}/pathreview-ai301-fa26-s1
+configfile: pyproject.toml
+plugins: anyio-4.15.1, pytest_httpserver-1.1.5, hypothesis-6.168.1, benchmark-5.3.0, asyncio-1.4.0, cov-7.1.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 17 items
+
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_results_sorted_by_score_descending PASSED           [  5%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_query_matching_no_documents PASSED                  [ 11%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_query_matching_multiple_documents PASSED            [ 17%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_case_insensitive_matching PASSED                    [ 23%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_top_k_limit PASSED                                  [ 29%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_top_k_larger_than_results PASSED                    [ 35%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_results_have_bm25_score PASSED                      [ 41%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_results_preserve_chunk_fields PASSED                [ 47%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_empty_index XFAIL (issue #68 (manifest H-01): B...) [ 52%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_index_not_called_returns_empty PASSED               [ 58%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_multi_word_query PASSED                             [ 64%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_tokenization PASSED                                 [ 70%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_tokenization_case_handling PASSED                   [ 76%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_large_corpus PASSED                                 [ 82%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_special_characters_in_query PASSED                  [ 88%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_exact_phrase_matching PASSED                        [ 94%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_single_word_chunks PASSED                           [100%]
+
+============================================ 16 passed, 1 xfailed in 0.30s =============================================
+```
+
+After:
+
+Run `python -c 'from rag.retriever.keyword_search import KeywordSearcher; searcher = KeywordSearcher(); searcher.index([])'`:
+
+```plaintext
+2026-10-02 12:26:42 [warning  ] keyword_search_empty_chunks
+```
+
+Run `pytest -v tests/unit/test_keyword_search.py`:
+
+```plaintext
+========================================================== test session starts ===========================================================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- {system path}/pathreview-ai301-fa26-s1/.venv/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default'
+benchmark: 5.3.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: {system path}/pathreview-ai301-fa26-s1
+configfile: pyproject.toml
+plugins: anyio-4.15.1, pytest_httpserver-1.1.5, hypothesis-6.168.1, benchmark-5.3.0, asyncio-1.4.0, cov-7.1.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 17 items
+
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_results_sorted_by_score_descending PASSED                             [  5%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_query_matching_no_documents PASSED                                    [ 11%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_query_matching_multiple_documents PASSED                              [ 17%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_case_insensitive_matching PASSED                                      [ 23%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_top_k_limit PASSED                                                    [ 29%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_top_k_larger_than_results PASSED                                      [ 35%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_results_have_bm25_score PASSED                                        [ 41%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_results_preserve_chunk_fields PASSED                                  [ 47%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_empty_index PASSED                                                    [ 52%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_index_not_called_returns_empty PASSED                                 [ 58%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_multi_word_query PASSED                                               [ 64%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_tokenization PASSED                                                   [ 70%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_tokenization_case_handling PASSED                                     [ 76%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_large_corpus PASSED                                                   [ 82%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_special_characters_in_query PASSED                                    [ 88%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_exact_phrase_matching PASSED                                          [ 94%]
+tests/unit/test_keyword_search.py::TestKeywordSearcher::test_single_word_chunks PASSED                                             [100%]
+
+=========================================================== 17 passed in 0.30s ===========================================================
+```
 
 ## Eval iterations
 
