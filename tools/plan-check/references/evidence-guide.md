@@ -59,6 +59,8 @@ In the plan: find it as a numbered list of steps, typically under "Approach" or 
 
 Steps read like an instruction manual - no large gaps between steps to open it up to chance or interpretation. If a hundred people were to follow the steps, they should all get the same result.
 
+Grade on the content, never the structure. While the location suggests a numbered list of steps, a good plan _can_ still be clearly executable without it.
+
 ## Test plan
 
 <!-- Where the plan says how success will be observed, and how that

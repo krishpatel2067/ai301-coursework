@@ -45,12 +45,12 @@ family will fail eval packages designed around that family.
 
 Each evidence is listed in order of most important to least important. Always read the candidate plan itself. The evidence column only lists the _additional_ evidence.
 
-| Check             | Evidence                                 | Pass condition                                                                       | Weight   |
-| ----------------- | ---------------------------------------- | ------------------------------------------------------------------------------------ | -------- |
-| ai-use-disclosure | Contribution policy                      | If policy requires disclosing AI use, plan must do so                                | required |
-| tight-scope       | Repro evidence, issue, thread highlights | Touches few explicitly listed files, or listed system scale matches info in evidence | required |
-| clear-plan        | -                                        | Unambiguous steps, certainty expressed, files listed, approach followable            | required |
-| correct-cause     | Repro evidence, issue, thread highlights | Plan's diagnosis doesn't contradict any of the evidence, including earlier comments  | required |
+| Check             | Evidence                                 | Pass condition                                                                                          | Weight   |
+| ----------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------- | -------- |
+| ai-use-disclosure | Contribution policy, thread highlights   | If policy requires disclosing AI use, plan must do so if any AI use is mentioned in any of the evidence | required |
+| tight-scope       | Repro evidence, issue, thread highlights | Touches few explicitly listed files, or listed system scale matches info in evidence                    | required |
+| clear-plan        | -                                        | Unambiguous steps, certainty expressed, files listed, approach followable                               | required |
+| correct-cause     | Repro evidence, issue, thread highlights | Plan's diagnosis doesn't contradict any of the evidence, including earlier comments                     | required |
 
 ## Verdict rule
 
