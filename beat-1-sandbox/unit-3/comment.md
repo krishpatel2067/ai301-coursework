@@ -1,10 +1,4 @@
-# Plan
-
-<!-- Replace this file with your unit-3 plan: the same `plan.md` your
-plan-check run graded.
-
-Keep the deviations heading below, and fill it before you submit. It is
-graded on being answered, not on there being deviations to report. -->
+Successfully repro-ed the issue based on the comments above. I have a clear, targeted plan that involves adding a small guard against an empty list. Here are the details:
 
 ## Diagnosis
 
@@ -33,11 +27,3 @@ Currently, the only test that fails in `test_keyword_search.py` is `test_empty_i
 ## Risks/Unknowns
 
 While I'm certain that adding a guard that retains empty chunks won't cause any consequent issues in the RAG pipeline, there is a slim chance that the guard gets propagated to the end user in a non-user-friendly message (an unhandled error, etc.), depending on how the rest of the RAG pipeline and the frontend are built.
-
-## Deviations
-
-<!-- [What changed between the plan you posted and the change you built, and
-why. If nothing changed, say so in your own words - "nothing changed;
-the plan held" earns these points in full. Leaving this blank does not.] -->
-
-The only thing that changed from the plan I posted and the change I built is documentation. I opted to change the `KeywordSearcher.index` to mention that no index is built if the provided `chunks` list is empty. It was necessary to ensure documentation was up to date with the change. I should have mentioned it in my plan for consistency and trust purposes.
