@@ -15,15 +15,15 @@ label is not graded.
 
 **Pull request**
 
-[Link to the pull request you opened. It must be the pull request's own page on the Path
-Review repo, not your fork's branch page.]
+<!-- [Link to the pull request you opened. It must be the pull request's own page on the Path
+Review repo, not your fork's branch page.] -->
 
 **Branch**
 
-[The name of the branch the pull request comes from, exactly as it appears in your fork.
+<!-- [The name of the branch the pull request comes from, exactly as it appears in your fork.
 The naming shape is a type prefix, then the issue number, then a short description. **The
 issue number in the branch name must be the number of the issue the pull request fixes** —
-a name carrying any other number does not satisfy this field.]
+a name carrying any other number does not satisfy this field.] -->
 
 ## Eval iterations
 
@@ -32,9 +32,9 @@ fields.
 
 **Run history**
 
-[The agreement score of each run you did, in order. A single run is a complete answer if
+<!-- [The agreement score of each run you did, in order. A single run is a complete answer if
 only one run occurred. **The last score in your list must match the agreement line in the
-`eval-run.txt` you committed** — that file is the record of your final run.]
+`eval-run.txt` you committed** — that file is the record of your final run.] -->
 
 ```plaintext
 agreement: 19/20 scored items
@@ -42,9 +42,9 @@ agreement: 19/20 scored items
 
 **Package analysis**
 
-[Pick one scored package (`pkg-01` through `pkg-20` — the four `calib-` packages are never
+<!-- [Pick one scored package (`pkg-01` through `pkg-20` — the four `calib-` packages are never
 scored). Name it by id, say what your rubric decided and what the gold label said, and
-explain why your rubric read it that way.]
+explain why your rubric read it that way.] -->
 
 **Package**: `pkg-01`
 **Rubric label**: `reject`
@@ -55,9 +55,9 @@ The rubric rejected the PR because it was visibly deviating from the required pu
 
 **Check rationale**
 
-[Quote one check from the `rubric.md` you uploaded to `tools/pr-precheck/`, exactly as it reads now.
+<!-- [Quote one check from the `rubric.md` you uploaded to `tools/pr-precheck/`, exactly as it reads now.
 Then say why it reads that way — what you revised to get there, or what you rejected in
-favour of it.]
+favour of it.] -->
 
 **Check**: `tested`
 **Evidence**: Issue, repro evidence, candidate plan, PR
@@ -69,10 +69,10 @@ This check specifically revolves around testing since many repos require all its
 
 **Trade-offs**
 
-[Every check gives something up. Any one of these is a complete answer: a package whose
+<!-- [Every check gives something up. Any one of these is a complete answer: a package whose
 result it changes, a canary you re-ran with `--only`, a case you accept it will miss, or a
 stated reason nothing changed elsewhere. "Nothing changed, and here is how I know" earns
-the point in full when the reason follows.]
+the point in full when the reason follows.] -->
 
 The rubric has a good heuristic for determining what a clean diff looks like. Similar to a human, it can easily see that a few files targeted to the same files that the plan lists in its scope is a clean diff. However, just like a human looking at the PR only, the rubric cannot verify whether the diff reflects a working change or introduces some silent bug, especially one that requires a much broader context on the repo than the diff provides. However, this is acceptable not just because it matches human grading already (surpassing it is not the goal), but also because that sort of check against an insidious bug should have been part of the candidate plan (which this tool does not grade, rather the tool uses it as ground truth). Ideally, the previous week's tool (`plan-check`) should've caught this, but it is often the case that bugs do slip through and new issues have to be created.
 
