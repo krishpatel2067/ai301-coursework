@@ -84,7 +84,7 @@ The original issue and my change involved the business logic layer, which can be
 <!-- Anything the reviewer should pay particular attention to -->
 
 - I did not use AI for this change since I was able to locate the bug and knew the implementation specifics on my own.
-- One thing that wasn't in the plan but is in this PR is that I updated the `KeywordSearch.index()` docstring. Oversight in my plan; but the change was worth it.
+- One thing that wasn't in the plan but is in this PR is that I updated the `KeywordSearcher.index()` docstring. Oversight in my plan; but the change was worth it.
 
 ---
 
