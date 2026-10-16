@@ -13,3 +13,4 @@
   - Add required rubric check `repo-mature` for >= 100 stars and repo age >= 6 months
   - Allow merges to count within the 6-month-back window
   - Make maintainer-active solely based on merges from issues (not comment count)
+  - Mandate a "bug" label or "docs" label in search strategy to fit taste profile
