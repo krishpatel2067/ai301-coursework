@@ -45,7 +45,7 @@ assignees, author, authorAssociation, body, closedAt, commentsCount, createdAt, 
 
 ```bash
 gh search issues \
-   --label "good first issue" \
+   'label:"good first issue" AND (label:bug OR label:docs)'
    --language python \
    --state open \
    --limit 60 \
@@ -58,24 +58,26 @@ Justification:
 
 - "Languages:" line: most preferred language Python (60-40 ratio)
 - "Issue _must_ line": "good first issue" label, open issue, no assignees, part of a public repository
+- Either bug/fix preferred, but at least one of those
 
 ### Query 2
 
 ```bash
 gh search issues \
-   --label "good first issue" \
+   'label:"good first issue" AND (label:bug OR label:docs)'
    --language javascript \
    --state open \
    --limit 40 \
    --visibility public \
    --no-assignee \
-   --json title,repository,labels,assignees,commentsCount,updatedAt,url
+   --json title,repository,labels,assignees,commentsCount,updatedAt,url \
 ```
 
 Justification:
 
 - "Languages:" line: 2nd preferred language JavaScript (60-40 ratio)
 - "Issue _must_ line": "good first issue" label, open issue, no assignees, part of a public repository
+- Either bug/fix preferred, but at least one of those
 
 ## Ranking filters
 
