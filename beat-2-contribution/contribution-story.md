@@ -54,10 +54,9 @@ happened; these entries are the toolkit's own timeline.
 All four entries are graded. Keep every heading below, and fill each
 one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: repurposing and refitting issue-select to issue-scout**
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
+Knowing that there are hundreds of issues to fit my taste profile, I tightened my profile, shedding extra languages and technologies, adding the types of issues I wanted (docs or fix), and mandating several key issue characteristics. On the first scan, I realized that many of top candidates were from brand new repos with very few stars, if any (and I want to contribute to a repository with real current impact). To address this shortcoming, one major change I made was adding a rubric check `repo-mature` to mandate >= 100 stars and repo age >= 6 months.
 
 **Unit 6: [one line on the tool work]**
 
