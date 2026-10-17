@@ -7,10 +7,9 @@ the repository is not read. **Keep every section header below under its exact na
 format criteria grade exactly that. Your course repo link is the whole submission: no tool
 files and no evidence uploads are part of Assignment 5.
 
-**Contribution Number:** [1]
-**Student:** [Student name]
-**GitHub Username:** [your GitHub username, exactly as it appears on your profile - no @, no
-profile URL. Your comments upstream are identified by this name.]
+**Contribution Number:** 1
+**Student:** Krish A. Patel
+**GitHub Username:** krishpatel2067
 **Issue:** [GitHub issue link]
 **Pull Request:** [GitHub PR link, once opened]
 
