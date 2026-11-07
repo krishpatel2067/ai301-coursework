@@ -47,9 +47,10 @@ left out; happy to do it as a follow-up if wanted.
 3. Test in my fork. `act` can't emit Projects events, so I'll make a personal Projects v2 board with
    the same two fields and my own token as a secret, then run via `workflow_dispatch` and by closing
    a test issue. Cases:
-   - empty (gets filled)
-   - filled (unchanged)
-   - "Hours" empty (skipped)
-   - issue not on the board (skipped).
+   - "Time spent (h)" empty, "Hours" not empty (fill)
+   - "Time spent (h)" not empty, "Hours" not empty (skip)
+   - "Time spent (h)" not empty, "Hours" empty (skip)
+   - "Time spent (h)" empty, "Hours" empty (skip)
+   - issue not on the board (skip).
 
    Run links will come in the PR.
