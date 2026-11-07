@@ -285,16 +285,18 @@ left out; happy to do it as a follow-up if wanted.
 
    Run links will come in the PR.
 
-
 [Record deviations here as they happen: what changed mid-build and why. A recorded deviation is
 honest work; silent drift is not.]
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: `plan-check` - used to check whether my plan and plan comment are ready to post.
+- What it produced: it rejected my plan twice reasonably; after overhauling my plan, it accepted.
+- Difficulties: it rejected my plan the first time due to getting the direction of the "Hours" ->
+  "Time spent (h)" wrong, then it rejected the second time due to my plan being vague and
+  technically inaccurate.
+- What changed: I used Claude to get more accurate technical details on the solution and added those
+  details to my plan.
 
 ---
 
