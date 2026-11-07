@@ -2,40 +2,33 @@
 
 Path: `beat-2-contribution/contribution-story.md`
 
-This file is Assignment 5, and it is graded at the path above; a copy kept anywhere else in
-the repository is not read. **Keep every section header below under its exact name** — the
-format criteria grade exactly that. Your course repo link is the whole submission: no tool
-files and no evidence uploads are part of Assignment 5.
+This file is Assignment 5, and it is graded at the path above; a copy kept anywhere else in the
+repository is not read. **Keep every section header below under its exact name** — the format
+criteria grade exactly that. Your course repo link is the whole submission: no tool files and no
+evidence uploads are part of Assignment 5.
 
-**Contribution Number:** [1]
-**Student:** [Student name]
-**GitHub Username:** [your GitHub username, exactly as it appears on your profile - no @, no
-profile URL. Your comments upstream are identified by this name.]
-**Issue:** [GitHub issue link]
-**Pull Request:** [GitHub PR link, once opened]
+**Contribution Number:** 1 **Student:** Krish A. Patel **GitHub Username:** krishpatel2067
+**Issue:** https://github.com/swisspost/design-system/issues/8480 **Pull Request:** [GitHub PR link,
+once opened]
 
-One repository, built across units 5 to 8, telling the whole story of your real
-contribution. Fill it as you work, not at the end — the sections below ask for evidence that
-is far easier to write down as it happens than to reconstruct in the last weekend.
+One repository, built across units 5 to 8, telling the whole story of your real contribution. Fill
+it as you work, not at the end — the sections below ask for evidence that is far easier to write
+down as it happens than to reconstruct in the last weekend.
 
-Contribution Number stays `[1]` unless you make more than one contribution this term; it
-just numbers them.
+Contribution Number stays `[1]` unless you make more than one contribution this term; it just
+numbers them.
 
 ---
 
 ## Toolkit
 
-Every story section below, from Why I Chose This Issue through Pull
-Request, ends with a Toolkit block: which tool did that phase's work
-and how you used it, what it produced, what difficulties or
-shortcomings it presented, and what you changed or would change
-because of them. Together the blocks are the thread the rubric's
-Toolkit points read, and they are the raw material for your unit-9
-portfolio, so keep them current as you work rather than
-reconstructing them later.
+Every story section below, from Why I Chose This Issue through Pull Request, ends with a Toolkit
+block: which tool did that phase's work and how you used it, what it produced, what difficulties or
+shortcomings it presented, and what you changed or would change because of them. Together the blocks
+are the thread the rubric's Toolkit points read, and they are the raw material for your unit-9
+portfolio, so keep them current as you work rather than reconstructing them later.
 
-A Toolkit block looks like this (copy it into each story section and
-fill it there):
+A Toolkit block looks like this (copy it into each story section and fill it there):
 
 ```text
 **Toolkit**
@@ -47,57 +40,74 @@ fill it there):
   update, or "nothing"]
 ```
 
-This section also keeps one short dated entry per week of tool work,
-starting below: what you built or changed that week, what broke, and
-what you changed because of it. The blocks tell the story where it
-happened; these entries are the toolkit's own timeline.
+This section also keeps one short dated entry per week of tool work, starting below: what you built
+or changed that week, what broke, and what you changed because of it. The blocks tell the story
+where it happened; these entries are the toolkit's own timeline.
 
-All four entries are graded. Keep every heading below, and fill each
-one in the week it belongs to.
+All four entries are graded. Keep every heading below, and fill each one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: repurposing and refitting `issue-select` to `issue-scout`**
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
+Knowing that there are hundreds of issues to fit my taste profile, I tightened my profile, shedding
+extra languages and technologies, adding the types of issues I wanted (docs or fix), and mandating
+several key issue characteristics. On the first scan, I realized that many of top candidates were
+from brand new repos with very few stars, if any (and I want to contribute to a repository with real
+current impact). To address this shortcoming, one major change I made was adding a rubric check
+`repo-mature` to mandate >= 100 stars and repo age >= 6 months.
 
-**Unit 6: [one line on the tool work]**
+**Unit 6: adding a voice guard and repo-memory file**
 
-[2-4 sentences: the voice-guard, the repo-memory file. What broke or
-fell short, and what changed because of it. "Nothing broke" counts when
-it is true - say how you know.]
+Despite the instructions, I chose to install the voice guard at the repo-level, not at the
+user-level, to avoid having stale skills / other files in my `~/.claude/`. In the future, if I end
+up having to copy-paste the voice guard multiple times, I will strongly consider making it
+user-level. But until then, I feel more comfortable with repo-level.
+
+The voice guard passed my claim draft on the first try, which makes sense since my claim comment was
+short and avoided a lot of the rejection qualities outlined in `voice-guide.md`.
+
+The repo-memory file was fairly simple to write. The only difficult part was outlining the testing
+process since I the repo instructed me to use `act`, which I had no former experience with. Some
+quick research unblocked me, but I'll confirm with Claude whether my commands outlined are sound.
 
 **Unit 7: [one line on the tool work]**
 
-[2-4 sentences: the ship-gate and your gate manifest. What it produced
-on your real branch, what fought you, what changed because of it.]
+[2-4 sentences: the ship-gate and your gate manifest. What it produced on your real branch, what
+fought you, what changed because of it.]
 
 **Unit 8: [one line on the tool work]**
 
-[2-4 sentences: the PR-monitor and your playbook. What it read, what it
-drafted, what you did with the draft.]
+[2-4 sentences: the PR-monitor and your playbook. What it read, what it drafted, what you did with
+the draft.]
 
 ---
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs in your own words: how you searched, what your scan
-surfaced, what your scout's verdict said, why this issue fits your
-profile, and what you hope to learn. If your scout's verdict on it
-was reject and you chose it anyway, say so here and say why; choosing
-against your own tool silently is what loses points. Close with an
-honest read of the tool itself: where the scout fell short on a real
-wild search and what you changed or would change, or what convinced
-you it held up. **Record the link to your claim comment in this section too.**
-Not claimed yet? Write `claim pending` and today's date where the link goes,
-and add the link the moment your claim lands.]
+I mainly used the
+[Issue Selection site](https://open-source-issue-tracker.onrender.com/?language=Python&language=JavaScript&language=TypeScript&tag=easy&tag=good+first+issue&page=23)
+to find my issue. The scan did not help in this respect since it surfaced issues that I didn't
+prefer, either due to difficulty, low repo star count, etc. This issue fits my profile because it is
+very tightly scoped yet still contains an opportunity for me to learn. Ironically, it doesn't
+involve Python or JavaScript, my original preferred language when looking for an issue. Nonetheless,
+this issue is a great opportunity for me to learn GitHub workflow syntax and perhaps GraphQL.
+
+Originally, my scout rejected the issue since it saw my own claim comments and thought someone was
+already working on the issue. I adjusted the scout rubric to exclude myself when considering claim
+comments (as well as open PRs and assignees), and the scout accepted this issue. This was one
+shortcoming I found with the scout in the wild, an edge case that I didn't run into in the sandbox,
+where claim comments were more formal and posted after the rubric run. Now that I patched the edge
+case, it should work a bit better in the wild, though it could run into other problems that I
+haven't come across or anticipated yet.
+
+**Claim comment**: https://github.com/swisspost/design-system/issues/8480#issuecomment-6330381566
 
 **Toolkit**
 
-- Tool: issue-scout (your scout: your search strategy, your rubric),
-  and how you used it
-- What it produced: [the scan and its verdict on this issue, described]
-- Difficulties: [where it fell short, or "none met" if none did]
-- What changed: [what you patched or would update, or "nothing"]
+- Tool: issue-scout - used it to objectively confirm my issue pick fits my preferences
+- What it produced: verdict: pass on this issue, reject on others
+- Difficulties: due to overly strict wording, it rejected issues with my own claim comment
+- What changed: patched the problem noted above by excluding myself/my comments/PRs in the
+  `not-worked-on` check
 
 ---
 
@@ -132,24 +142,79 @@ and add the link the moment your claim lands.]
 
 **Environment Setup**
 
-[What a stranger would need to stand this up: your operating system,
-the relevant versions (language, runtime, package manager, the project
-itself), and how you set the project up. Then the challenges you faced
-and how you solved them, or that none came up.]
+No specific environment needed - just the `design-system` repo cloned locally and open in a text
+editor.
 
 **Steps to Reproduce**
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+1. Look at all the files in `.github/workflows/`. None indicate they are to autofill the "hours"
+   field.
+2. Perform a repo-wide search on "hours". Nothing shows up.
 
 **Reproduction Evidence**
 
-- **Commit showing reproduction:** [link to commit in your fork]
-- **Screenshots/logs:** [if applicable]
-- **My findings:** [what you discovered during reproduction; an
-  honest, evidenced cannot-reproduce that led you to re-pick or ask
-  the maintainer belongs here and costs you nothing]
+- **Commit showing reproduction:** none
+- **Screenshots/logs:**
+
+Files in `.github/workflows/` via `tree`:
+
+```plaintext
+├── build-documentation.yaml
+├── build-tokens.yaml
+├── create-token-pr.yaml
+├── deploy-documentation.yaml
+├── dry-run-publish.yaml
+├── e2e-tests.yaml
+├── fetch-icons-v9.yaml
+├── fetch-icons.yaml
+├── label-stale-review-prs.yaml
+├── lint.yaml
+├── playwright-tests.yml
+├── pr-title-lint.yaml
+├── release-documentation.yaml
+├── release.yaml
+├── scripts
+│   ├── check-packages-on-npm.mjs
+│   ├── icons.mjs
+│   └── validate-icons.mjs
+├── snapshot-tests.yaml
+├── sonar-analysis.yaml
+├── stale.yaml
+├── unit-tests.yaml
+├── validate-icon-downloads.yaml
+└── visual-tests.yaml
+
+2 directories, 23 files
+```
+
+Search results from step 2:
+
+```plaintext
+6 results - 4 files
+
+apps/documentation/src/stories/misc/migration-guide/migrationv9-10.component.ts:
+  1074                                <code-block
+  1075:                                 code=${`<!-- template.html -->\n<ngb-timepicker\n  [(ngModel)]="appointmentTime"\n  [seconds]="true"\n  [spinners]="true"\n  [meridian]="false"\n  [hourStep]="1"\n  [minuteStep]="5"\n  [secondStep]="10"\n  [readonlyInputs]="false"\n></ngb-timepicker>`}
+  1076                                ></code-block>
+
+  1100                                  <li>
+  1101:                                   <strong>Step behavior (<code>hourStep</code>,
+  1102                                    <code>minuteStep</code>, <code>secondStep</code>):</strong>
+
+packages/icons/src/icons/post/report.json:
+  13129            "Express 24/7",
+  13130:           "Expressed 24 hours a day",
+  13131            "Espresso 24 ore su 24",
+
+packages/internet-header/CHANGELOG.md:
+  801
+  802: - Sanitized hours fields in footer against XSS "Incomplete multi-character sanitization" issue. (by [@imagoiq](https://github.com/imagoiq) with [#2807](https://github.com/swisspost/design-system/pull/2807))
+  803
+
+```
+
+- **My findings:** There is no existing GitHub workflow (or something similar) to autofill the
+  "hours" field in the associated GitHub project.
 
 **Toolkit**
 
@@ -164,13 +229,12 @@ and how you solved them, or that none came up.]
 
 **Analysis**
 
-[Your analysis of the root cause: what is causing the issue, traced
-to the files and functions involved.]
+[Your analysis of the root cause: what is causing the issue, traced to the files and functions
+involved.]
 
 **Proposed Solution**
 
-[High-level description of your fix approach, and what you are
-deliberately NOT changing.]
+[High-level description of your fix approach, and what you are deliberately NOT changing.]
 
 **Implementation Plan**
 
@@ -178,8 +242,8 @@ deliberately NOT changing.]
 2. [Add or change Z]
 3. [Update tests]
 
-[Record deviations here as they happen: what changed mid-build and
-why. A recorded deviation is honest work; silent drift is not.]
+[Record deviations here as they happen: what changed mid-build and why. A recorded deviation is
+honest work; silent drift is not.]
 
 **Toolkit**
 
@@ -192,10 +256,9 @@ why. A recorded deviation is honest work; silent drift is not.]
 
 ## Testing Strategy
 
-[What observable checks prove the fix: your reproduction steps re-run
-against the built change (before and after), and the repo's own test
-suite or checks with the outcome shown. "Tests pass" with nothing
-observable named is not a strategy.]
+[What observable checks prove the fix: your reproduction steps re-run against the built change
+(before and after), and the repo's own test suite or checks with the outcome shown. "Tests pass"
+with nothing observable named is not a strategy.]
 
 **Toolkit**
 
@@ -208,8 +271,8 @@ observable named is not a strategy.]
 
 ## Implementation Notes
 
-[A running log, added to as you work. Date each entry. What you
-built, decisions you made when you made them, wrong turns included.]
+[A running log, added to as you work. Date each entry. What you built, decisions you made when you
+made them, wrong turns included.]
 
 **[Date]**
 
@@ -232,18 +295,15 @@ built, decisions you made when you made them, wrong turns included.]
 
 **PR Link:** [GitHub PR URL when opened]
 
-**PR Description:** [what the PR says; much of the content above
-adapts into it]
+**PR Description:** [what the PR says; much of the content above adapts into it]
 
 **Maintainer Feedback:**
 
-- [Date]: [feedback received, or "none yet"; silence is a normal
-  state and costs you nothing]
+- [Date]: [feedback received, or "none yet"; silence is a normal state and costs you nothing]
 - [Date]: [how you addressed it]
 
-**Status:** [Awaiting review / Iterating / Merged / Closed. The
-status is a fact you record, never a grade: the PR is graded as
-opened.]
+**Status:** [Awaiting review / Iterating / Merged / Closed. The status is a fact you record, never a
+grade: the PR is graded as opened.]
 
 **Toolkit**
 
@@ -262,8 +322,8 @@ opened.]
 
 **Challenges Overcome**
 
-[What was hard and how you solved it; point at the real events, the
-Toolkit blocks above are full of them.]
+[What was hard and how you solved it; point at the real events, the Toolkit blocks above are full of
+them.]
 
 **What I'd Do Differently Next Time**
 
@@ -273,10 +333,9 @@ Toolkit blocks above are full of them.]
 
 ## Resources Used
 
-[What actually helped, not a reading list. List things this story
-already shows you using: the doc you followed to set the environment
-up, the thread that explained the bug, the person who answered you.
-One real entry beats ten plausible ones.]
+[What actually helped, not a reading list. List things this story already shows you using: the doc
+you followed to set the environment up, the thread that explained the bug, the person who answered
+you. One real entry beats ten plausible ones.]
 
 - [Link to documentation that helped]
 - [Discussion, issue, or post that helped]

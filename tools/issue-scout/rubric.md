@@ -1,0 +1,74 @@
+# Rubric: is this a good first issue?
+
+<!--
+THIS IS THE PART YOU WRITE. The skill in SKILL.md executes whatever checks
+you define here. It ships empty on purpose: the judgment is your work.
+
+A filled rubric must contain:
+
+1. At least one row in the checks table. Each row needs all four columns:
+   - Check: a short name (used in the output JSON).
+   - Evidence: exactly what to look at, and where. Name the source
+     (repo-facts block, issue body, comment thread, or the locations in
+     references/evidence-guide.md). "The repo" is not a source; "the last
+     5 default-branch commit dates" is.
+   - Pass condition: a condition someone else could apply and get your
+     answer. Prefer thresholds with numbers ("a maintainer commented
+     within 30 days") over adjectives ("maintainer is responsive").
+   - Weight: `required` (a fail here rejects the issue) or `preferred`
+     (never changes the verdict; a nice-to-have that helps rank the
+     issues you accept).
+
+2. A verdict rule below the table: how the check grades combine into
+   accept or reject, including how `unclear` is treated. The verdict
+   space is binary. If you write no rule for `unclear`, the skill treats
+   it as fail.
+
+Cover what actually kills first contributions. The lecture named four
+families: the maintainer is alive, the repo is in use, the scope fits a
+newcomer, and nobody else is already on it. A rubric that ignores a family
+will fail eval issues designed around that family.
+-->
+
+## Checks
+
+| Check               | Evidence                                                     | Pass condition                                                                                                                                                                                                                                                                                                                                                                                                   | Weight   |
+| ------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `maintainer-active` | default-branch commits                                       | commits are within 3 months and linked to issues                                                                                                                                                                                                                                                                                                                                                                 | required |
+| `repo-in-use`       | archived, last push/merge to any branch, latest release date | last push/merge within the last 6 months, repo _not_ archived, latest release date within the last year (ignore for directory/listing-oriented repos)                                                                                                                                                                                                                                                            | required |
+| `not-worked-on`     | issue assignees, linked PRs, comments                        | _no_ assignees listed other than me, _no_ open/merged linked PRs other than mine, <= 1 closed PRs, _no_ "I can work on this"-type comments within the last month other than mine                                                                                                                                                                                                                                 | required |
+| `policy-allows-ai`  | `CONTRIBUTION.md` > "Generative AI" section                  | AI _must not_ be banned, but permitted use with conditions is ok                                                                                                                                                                                                                                                                                                                                                 | required |
+| `repo-mature`       | repo creation date, stars                                    | repo must be at least 6 months old and have at least 100 stars                                                                                                                                                                                                                                                                                                                                                   | required |
+| `scope-feasible`    | Issue body: the work it asks for                             | The issue describes one identifiable piece of work someone could start: a behavior, a gap, or a task you can point at. It fails only when there is no single piece of work in it: a codebase-wide checklist, an "improve X everywhere", or a container issue tracking many sub-tasks. An open design edge, an "etc.", or several files involved never fails this check; that raises the difficulty note instead. | required |
+
+## Difficulty Note
+
+With each accepted candidate, report a one-line difficulty note in
+the read-out summary:
+
+- **straightforward**: the issue names where the change lives and the
+  change is bounded.
+- **moderate**: the location is yours to find, or several files are
+  involved.
+- **ambitious**: an open design edge, or an unfamiliar subsystem;
+  name the edge, because claiming this issue means raising it with
+  the maintainer early.
+
+The note is information for the chooser, never a verdict input: it
+does not appear in the fenced JSON block, it never changes accept or
+reject, and in eval mode it is skipped entirely.
+
+<!-- Honestly stated: this patch keeps true umbrella issues rejecting
+(the floor catches them) while accepting bounded issues with open
+edges. Note the patch and what drove it in the Toolkit block of your Why
+I Chose This Issue section; the
+patch itself is unit-9 portfolio material. -->
+
+## Verdict rule
+
+<!-- State how the grades above combine into accept or reject, and how
+unclear is treated. Example shape (write your own): "accept if every
+required check passes; preferred checks never change the verdict, they
+rank accepted issues; unclear counts as fail." -->
+
+Output verdict "accept" only if all required checks pass, otherwise output verdict "reject". An unclear check is the same as a failed check. Preferred checks only rank the accepted issues, not change the verdict.
