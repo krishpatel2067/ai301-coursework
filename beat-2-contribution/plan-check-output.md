@@ -26,24 +26,24 @@ Checks
   - Open question: the plan doesn't address x, which is still unanswered in the thread.
 - correct-cause: pass. The plan says no workflow fills the field. That fits the issue and the
   workflow listing, which has nothing project-related. I couldn't opects_v2 or "Hours". The trigger
-  mismatchabove counts against the plan's clarity rather than its diagnosis.
+  mismatch above counts against the plan's clarity rather than its diagnosis.
 
 Voice-guide notes on the draft comment
 
-- Be Concise: "I will add…", "Here is my plang anything out the…" are wordy. "Will add…"and "Only
+- Be Concise: "I will add…", "Here is my plan anything out the…" are wordy. "Will add…"and "Only
   touching .github/workflows/" are shorter. "out the" is also a typo for "outside".
 - Contractions: "I will NOT" with capitals is italic emphasis, like _not_.
 - Who I am in threads: the comment doesn't mention being a new contributor or what to expect next.
-- Thread awareness: it ignores that your Octour Oct 28 ping came 6 days later, whichbreaks "Ping
+- Thread awareness: it ignores that your Oct 28 ping came 6 days later, which breaks "Ping
   Only After 1 Week of Inactivity". Next ping no earlier than Nov 4.
-- Scope rule: keep the comment off the threaady to post either.
+- Scope rule: keep the comment off the thread to post either.
 
 Procedure gaps
 
 - procedure.md has no live-mode steps and doesn't say where the plan files live.
 - Its re-run rule for ? grades is ambiguous:is "more than one" ?, but not what to do with exactly
   one.
-- The Bash ship-gate hook broke after the sktory, so I fetched the issue through asubagent instead
+- The Bash ship-gate hook broke after the story, so I fetched the issue through a subagent instead
   of gh.
 
 ```json
