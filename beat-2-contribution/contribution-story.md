@@ -1,4 +1,4 @@
-# Contribution: [Issue Title]
+# Contribution: Create a workflow to autofill the hours field
 
 Path: `beat-2-contribution/contribution-story.md`
 
@@ -103,7 +103,7 @@ haven't come across or anticipated yet.
 
 **Toolkit**
 
-- Tool: issue-scout - used it to objectively confirm my issue pick fits my preferences
+- Tool: `issue-scout` - used it to objectively confirm my issue pick fits my preferences
 - What it produced: verdict: pass on this issue, reject on others
 - Difficulties: due to overly strict wording, it rejected issues with my own claim comment
 - What changed: patched the problem noted above by excluding myself/my comments/PRs in the
@@ -218,10 +218,12 @@ packages/internet-header/CHANGELOG.md:
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: `repro-check` - used to check my repro draft against the issue.
+- What it produced: initially it failed before the rubric adjustment, but afterwards, it passed.
+- Difficulties: it initially failed because it didn't recognize that a full environment info wasn't
+  necessary in this edge-case issue and a lack of version numbers isn't a weakness in this issue
+- What changed: adjusted the rubric checks `has-evidence` and `right-target` to apply to only
+  bug-related issues, leading to a pass
 
 ---
 
