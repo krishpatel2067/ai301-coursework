@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"$HOME/.claude/ship-gate/check_gate.py\"",
+            "command": "python3 \"./.claude/ship-gate/check_gate.py\"",
             "timeout": 1800,
             "statusMessage": "ship-gate: running your manifest's checks and your pr-precheck on this branch"
           }
