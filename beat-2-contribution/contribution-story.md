@@ -115,26 +115,29 @@ haven't come across or anticipated yet.
 
 **Problem Description**
 
-[In your own words, what is broken or missing?]
+What is missing: a GitHub workflow to automatically fill the "Hours" field based on the "Time Spent
+(h)" field (check repro steps for confirmation of this).
 
 **Expected Behavior**
 
-[What should happen?]
+There should be a GitHub workflow that auto-fills the "Hour" field based on the "Time spent (h)"
+field.
 
 **Current Behavior**
 
-[What actually happens?]
+There is currently no GitHub workflow in `.github/workflows/` that auto-fills the "Hour" field based
+on the "Time spent (h)" field.
 
 **Affected Components**
 
-[Which parts of the codebase are involved?]
+Only `.github/workflows/`.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: no tool used to understand the issue
+- What it produced: N/A
+- Difficulties: N/A
+- What changed: N/A
 
 ---
 
