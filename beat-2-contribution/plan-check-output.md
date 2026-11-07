@@ -1,5 +1,84 @@
 # Plan Check Output
 
+## 2026-11-07 (Run 3; clarify plan ane ensure accuracy)
+
+Verdict: accept. The plan is ready to build from. Per the scope rules, it isn't ready to post: keep
+plan-comment.md off the issue thread.
+
+Evidence used
+
+- Issue #8480: it's open and unassigned. My claim comment (10/22) and ping (10/28) are the only
+  comments, and neither a maintainer reply nor a competing plan exists.
+- Contribution policy: CONTRIBUTING.md has no AI or LLM policy. The PR template and AGENTS.md both
+  return 404, so I couldn't read them.
+- Repro evidence: this is a feature issue, so there's no repro. The issue body's checklist stands in
+  as the behavior spec.
+
+Checks
+
+- ai-use-disclosure: pass. The repo has no disclosure requirement, and the plan mentions no AI use.
+- tight-scope: pass. One new file, .github/workflows/autofill-time-spent.yaml. The plan says "No
+  other files" and defers the "(tbd)" PR-template checkbox.
+- clear-plan: pass. It gives the trigger, auth, ID lookup, field names, implementation method and
+  skip cases. Three implementation steps follow, and a four-case test matrix runs via
+  workflow_dispatch and a fork board.
+- correct-cause: pass. "No workflow touches the Projects board" doesn't contradict the issue, which
+  asks for a new workflow. The issues: closed trigger is a stated substitute for "set to done", with
+  the reason given.
+
+Voice-guide notes (live mode, .claude/voice-guard/voice-guide.md)
+
+- Missing assumptions: the comment says "I've listed my assumptions below", but it has no
+  assumptions section. Add one or reword the line. Your recent commit says questions were converted
+  to assumptions, so that conversion may be missing from this file.
+- Be Concise: "Here's the plan. New contributor here, so I've listed… Happy to adjust before I
+  start." can be shorter.
+- Contractions: "I will use SWISSPOSTDEVS_ACCESS_TOKEN" could be "I'll use…".
+- Timeframe: "Run links will come in the PR" gives no deadline, so it's fine.
+- Ping rule: your 10/28 ping came 6 days after your 10/22 claim. That breaks "Ping Only After 1 Week
+  of Inactivity". It's past, so it doesn't affect this grade.
+
+Procedure gaps
+
+- procedure.md only maps evidence locations for eval bundles. I improvised the live-mode sources:
+  the issue via gh, CONTRIBUTING.md via the web-fetch agent, and your drafts.
+- It grades with P/F/?, while the output format needs pass/fail/unclear.
+- skills/plan-check/voice-guide.md is a stale pointer to the newer
+  .claude/voice-guard/voice-guide.md.
+
+Shell problem My shell is stuck in beat-2-contribution, and the ship-gate hook uses a relative path.
+Every Bash call there fails until the shell returns to the repo root. Type ! cd
+/home/theca/repos/GitHub/CodePath/AI301/ai301-coursework to fix it.
+
+```json
+{
+  "item": "https://github.com/swisspost/design-system/issues/8480",
+  "checks": [
+    {
+      "name": "ai-use-disclosure",
+      "grade": "pass",
+      "evidence": "CONTRIBUTING.md has no AI/LLM policy and the plan mentions no AI use, so no disclosure is required."
+    },
+    {
+      "name": "tight-scope",
+      "grade": "pass",
+      "evidence": "Scope: 'Only the new workflow file. No other files, no production code.' It matches the issue's single-workflow ask and defers the (tbd) PR-template checkbox."
+    },
+    {
+      "name": "clear-plan",
+      "grade": "pass",
+      "evidence": "It names the file, trigger (issues: closed + workflow_dispatch), auth secret, name-based ID lookup, github-script/GraphQL implementation, skip cases and a 4-case test matrix."
+    },
+    {
+      "name": "correct-cause",
+      "grade": "pass",
+      "evidence": "'No workflow touches the Projects board' is consistent with the issue's request for a new workflow. No maintainer comment contradicts it."
+    }
+  ],
+  "verdict": "accept"
+}
+```
+
 ## 2026-11-07 (Run 2; correct direction of copy-paste)
 
 The verdict is reject. The plan fails clear-plan, and every required check has to pass.
@@ -34,8 +113,8 @@ Voice-guide notes on the draft comment
   touching .github/workflows/" are shorter. "out the" is also a typo for "outside".
 - Contractions: "I will NOT" with capitals is italic emphasis, like _not_.
 - Who I am in threads: the comment doesn't mention being a new contributor or what to expect next.
-- Thread awareness: it ignores that your Oct 28 ping came 6 days later, which breaks "Ping
-  Only After 1 Week of Inactivity". Next ping no earlier than Nov 4.
+- Thread awareness: it ignores that your Oct 28 ping came 6 days later, which breaks "Ping Only
+  After 1 Week of Inactivity". Next ping no earlier than Nov 4.
 - Scope rule: keep the comment off the thread to post either.
 
 Procedure gaps
