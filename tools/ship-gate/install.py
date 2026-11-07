@@ -40,7 +40,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-HOME = Path.home()
+HOME = Path()
 CLAUDE_DIR = HOME / ".claude"
 GATE_DIR = CLAUDE_DIR / "ship-gate"
 SETTINGS = CLAUDE_DIR / "settings.json"
