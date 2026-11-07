@@ -12,21 +12,20 @@ workflows). When an issue is closed (moved to Done), it will:
 2. Read its "Time Spent (h)" and "Hours" values.
 3. If "Time Spent (h)" is filled, do nothing. If it's empty, set it to the "Hours" value.
 
-Decisions (questions for maintainers marked with ❓):
+Decisions:
 
 - **Trigger:** `issues: closed`, plus `workflow_dispatch` (takes an issue number) for manual runs
   and testing. Actions has no trigger for Projects v2 item changes, so closing the issue is the
-  closest signal to "set to done". ❓ Does the board move items to Done on close?
+  closest signal to "set to done".
 - **Auth:** the default `GITHUB_TOKEN` can't write to an org-level Projects v2 board, so the
-  workflow needs a token with the `project` scope. ❓ Can the existing `SWISSPOSTDEVS_ACCESS_TOKEN`
-  secret be used, or should a new one be added? I can't add secrets myself.
+  workflow needs a token with the `project` scope. I will use `SWISSPOSTDEVS_ACCESS_TOKEN` secret
+  since other workflows use that (happy to change it if you want).
 - **IDs:** nothing hardcoded. The script looks up the project, item and field IDs by name at run
-  time. ❓ Which project number should it use?
-- **Field names:** "Time Spent (h)" (the issue's checklist wording; the intro says "Hours Spent
-  (h)") and "Hours". Both are constants at the top of the script, so a rename is a one-line change.
-  ❓ Confirm the exact names.
+  time.
+- **Field names:** "Time Spent (h)" and "Hours". Both are constants at the top of the script, so a
+  rename is a one-line change.
 - **Implementation:** `actions/github-script` (already used in `label-stale-review-prs.yaml`) with
-  GraphQL calls, rather than shelling out to `gh api`.
+  GraphQL calls, rather than using the raw `gh api`.
 - **Skipped:** if the item isn't on the board, or "Hours" is empty, log a message and exit without
   failing.
 
