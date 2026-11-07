@@ -317,23 +317,35 @@ with nothing observable named is not a strategy.]
 
 ## Implementation Notes
 
-[A running log, added to as you work. Date each entry. What you built, decisions you made when you
-made them, wrong turns included.]
+**2026-11-07**
 
-**[Date]**
+Built the initial workflow in `.github/workflows/autofill-time-spent.yaml`.
 
-[Entry]
+**2026-11-07**
 
-**[Date]**
+Reduced over-engineering by assuming that event issue is only part of 1 project (reasonable since
+the org has a single project).
 
-[Entry]
+**2026-11-07**
+
+Substituted hard coded project with event issue's linked project, if any.
+
+**2026-11-07**
+
+Switched `github-script` to v9 (latest) from v7 (using deprecated Node 20).
+
+**2026-11-07**
+
+Opted for the commit SHA for `github-script` v9 rather than the tagged object SHA for improved
+security.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: `Claude Code Opus 5.5` to generate `autofill-time-spent.yaml` based on my plan.
+- What it produced: the initial script and the subsequent revisions listed above.
+- Difficulties: due to gaps in my plan, it over-engineered project searching by assuming an issue
+  can appear in multiple projects.
+- What changed: I re-prompted Claude to assume up to 1 project per issue to simplify the script.
 
 ---
 
