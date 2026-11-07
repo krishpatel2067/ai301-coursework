@@ -120,13 +120,13 @@ What is missing: a GitHub workflow to automatically fill the "Hours" field based
 
 **Expected Behavior**
 
-There should be a GitHub workflow that auto-fills the "Hour" field based on the "Time spent (h)"
+There should be a GitHub workflow that auto-fills the "Hours" field based on the "Time spent (h)"
 field.
 
 **Current Behavior**
 
-There is currently no GitHub workflow in `.github/workflows/` that auto-fills the "Hour" field based
-on the "Time spent (h)" field.
+There is currently no GitHub workflow in `.github/workflows/` that auto-fills the "Hours" field
+based on the "Time spent (h)" field.
 
 **Affected Components**
 
@@ -234,18 +234,24 @@ packages/internet-header/CHANGELOG.md:
 
 **Analysis**
 
-[Your analysis of the root cause: what is causing the issue, traced to the files and functions
-involved.]
+There is no GitHub workflow under `.github/workflows/` that auto-fills the "Hours" field based on
+the "Time spent (h)" field.
 
 **Proposed Solution**
 
-[High-level description of your fix approach, and what you are deliberately NOT changing.]
+I will add a new file (e.g. `autofill-hours.yml`) in `.github/workflows/` that runs when a GitHub
+project item is edited. If the "Hours" field is empty, the workflow will autofill it with the value
+from "Time spent (h)" field using a GraphQL query sent to `gh api`.
+
+I will NOT be changing anything out the `.github/workflows/` folder, especially NOT any production
+code or files since those are out of scope for a GitHub-workflows-oriented issue.
 
 **Implementation Plan**
 
-1. [Modify file X to do Y]
-2. [Add or change Z]
-3. [Update tests]
+1. Create `.github/workflows/autofill-hours.yml`.
+2. Add config to the newly created file to autofill "Hours", if empty, with the value from "Time
+   spent (h)" using `gh api graphql`.
+3. Test the workflow using `act`.
 
 [Record deviations here as they happen: what changed mid-build and why. A recorded deviation is
 honest work; silent drift is not.]
