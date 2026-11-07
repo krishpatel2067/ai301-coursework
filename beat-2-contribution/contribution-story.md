@@ -1,4 +1,4 @@
-# Contribution: [Issue Title]
+# Contribution: Create a workflow to autofill the hours field
 
 Path: `beat-2-contribution/contribution-story.md`
 
