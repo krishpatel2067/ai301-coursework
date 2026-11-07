@@ -46,7 +46,7 @@ where it happened; these entries are the toolkit's own timeline.
 
 All four entries are graded. Keep every heading below, and fill each one in the week it belongs to.
 
-**Unit 5: repurposing and refitting issue-select to issue-scout**
+**Unit 5: repurposing and refitting `issue-select` to `issue-scout`**
 
 Knowing that there are hundreds of issues to fit my taste profile, I tightened my profile, shedding
 extra languages and technologies, adding the types of issues I wanted (docs or fix), and mandating
@@ -55,10 +55,19 @@ from brand new repos with very few stars, if any (and I want to contribute to a 
 current impact). To address this shortcoming, one major change I made was adding a rubric check
 `repo-mature` to mandate >= 100 stars and repo age >= 6 months.
 
-**Unit 6: [one line on the tool work]**
+**Unit 6: adding a voice guard and repo-memory file**
 
-[2-4 sentences: the voice-guard, the repo-memory file. What broke or fell short, and what changed
-because of it. "Nothing broke" counts when it is true - say how you know.]
+Despite the instructions, I chose to install the voice guard at the repo-level, not at the
+user-level, to avoid having stale skills / other files in my `~/.claude/`. In the future, if I end
+up having to copy-paste the voice guard multiple times, I will strongly consider making it
+user-level. But until then, I feel more comfortable with repo-level.
+
+The voice guard passed my claim draft on the first try, which makes sense since my claim comment was
+short and avoided a lot of the rejection qualities outlined in `voice-guide.md`.
+
+The repo-memory file was fairly simple to write. The only difficult part was outlining the testing
+process since I the repo instructed me to use `act`, which I had no former experience with. Some
+quick research unblocked me, but I'll confirm with Claude whether my commands outlined are sound.
 
 **Unit 7: [one line on the tool work]**
 
