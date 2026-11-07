@@ -1,6 +1,6 @@
 # Scan Output
 
-## 2026-11-06 (Run 2; exclude claim comments by me)
+## 2026-11-07 (Run 2; exclude claim comments by me)
 
 Only #8480 is accepted. #379 and #380 are rejected, and both are already closed.
 
@@ -72,7 +72,7 @@ Scan-notes friction: the rubric treats "other than mine" as the only exception f
 ]
 ```
 
-## 2026-11-06 (Run 1; rubric scope patch)
+## 2026-11-07 (Run 1; rubric scope patch)
 
 None of the three issues is acceptable under the rubric as written. The direct run skipped search and ranking.
 
