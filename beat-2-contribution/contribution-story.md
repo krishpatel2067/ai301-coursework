@@ -10,7 +10,7 @@ files and no evidence uploads are part of Assignment 5.
 **Contribution Number:** 1
 **Student:** Krish A. Patel
 **GitHub Username:** krishpatel2067
-**Issue:** [GitHub issue link]
+**Issue:** https://github.com/swisspost/design-system/issues/8480
 **Pull Request:** [GitHub PR link, once opened]
 
 One repository, built across units 5 to 8, telling the whole story of your real
