@@ -1,5 +1,80 @@
 # Plan Check Output
 
+## 2026-11-07 (Run 2; correct direction of copy-paste)
+
+The verdict is reject. The plan fails clear-plan, and every required check has to pass.
+
+I graded beat-2-contribution/plan.md and beat-2-contribution/plan-comment.md. There is no plan.md at
+the repo root. The two files hold identical text, and the comment only adds "Here is my plan:" at
+the top.
+
+Checks
+
+- ai-use-disclosure: pass. The subagent found no AI policy in swisspost's CONTRIBUTING.md and no AI
+  links in the repo docs, so no disclosure is required.
+- tight-scope: pass. The plan names one new file, .github/workflows/autofill-hours.yml, and says it
+  touches nothing else.
+- clear-plan: fail.
+  - Trigger: the plan runs "when a GitHub project item is edited". The issue says the workflow
+    should run when an issue is set to done.
+  - Credentials: it doesn't say how the workflow gets access to the project field, the project's
+    field IDs, or the credentials to write it. The default GITate an org-level Project.
+  - Unresolved choices: it doesn't settle the file name (e.g.) or the field name. The issue itself
+    says both "Hours Spent (h)" and "Time Spent (h)".
+  - Testing: step 3 tests with act, but act can't emit a project-item event, so the test step is
+    unverifiable.
+  - Open question: the plan doesn't address x, which is still unanswered in the thread.
+- correct-cause: pass. The plan says no workflow fills the field. That fits the issue and the
+  workflow listing, which has nothing project-related. I couldn't opects_v2 or "Hours". The trigger
+  mismatchabove counts against the plan's clarity rather than its diagnosis.
+
+Voice-guide notes on the draft comment
+
+- Be Concise: "I will add…", "Here is my plang anything out the…" are wordy. "Will add…"and "Only
+  touching .github/workflows/" are shorter. "out the" is also a typo for "outside".
+- Contractions: "I will NOT" with capitals is italic emphasis, like _not_.
+- Who I am in threads: the comment doesn't mention being a new contributor or what to expect next.
+- Thread awareness: it ignores that your Octour Oct 28 ping came 6 days later, whichbreaks "Ping
+  Only After 1 Week of Inactivity". Next ping no earlier than Nov 4.
+- Scope rule: keep the comment off the threaady to post either.
+
+Procedure gaps
+
+- procedure.md has no live-mode steps and doesn't say where the plan files live.
+- Its re-run rule for ? grades is ambiguous:is "more than one" ?, but not what to do with exactly
+  one.
+- The Bash ship-gate hook broke after the sktory, so I fetched the issue through asubagent instead
+  of gh.
+
+```json
+{
+  "item": "https://github.com/swisspost/design-system/issues/8480",
+  "checks": [
+    {
+      "name": "ai-use-disclosure",
+      "grade": "pass",
+      "evidence": "CONTRIBUTING.md has no AI disclosure policy; none required"
+    },
+    {
+      "name": "tight-scope",
+      "grade": "pass",
+      "evidence": "Single new file .github/workflows/autofill-hours.yml, nothing else touched"
+    },
+    {
+      "name": "clear-plan",
+      "grade": "fail",
+      "evidence": "Trigger 'project item edited' vs issue's 'set to done'; no token/project-field ID handling; e.g. filename; act can't test projects events"
+    },
+    {
+      "name": "correct-cause",
+      "grade": "pass",
+      "evidence": "'No workflow autofills the field' matches issue and workflows listing (no project-related workflow)"
+    }
+  ],
+  "verdict": "reject"
+}
+```
+
 ## 2026-11-07 (Run 1)
 
 Verdict: reject. The plan builds the opposite of what the issue asks for, and it leaves out the
