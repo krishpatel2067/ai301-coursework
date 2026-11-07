@@ -120,13 +120,13 @@ What is missing: a GitHub workflow to automatically fill the "Hours" field based
 
 **Expected Behavior**
 
-There should be a GitHub workflow that auto-fills the "Hours" field based on the "Time spent (h)"
+There should be a GitHub workflow that auto-fills the "Hours" field based on the "Time Spent (h)"
 field.
 
 **Current Behavior**
 
 There is currently no GitHub workflow in `.github/workflows/` that auto-fills the "Hours" field
-based on the "Time spent (h)" field.
+based on the "Time Spent (h)" field.
 
 **Affected Components**
 
@@ -293,7 +293,7 @@ honest work; silent drift is not.]
 - Tool: `plan-check` - used to check whether my plan and plan comment are ready to post.
 - What it produced: it rejected my plan twice reasonably; after overhauling my plan, it accepted.
 - Difficulties: it rejected my plan the first time due to getting the direction of the "Hours" ->
-  "Time spent (h)" wrong, then it rejected the second time due to my plan being vague and
+  "Time Spent (h)" wrong, then it rejected the second time due to my plan being vague and
   technically inaccurate.
 - What changed: I used Claude to get more accurate technical details on the solution and added those
   details to my plan.
