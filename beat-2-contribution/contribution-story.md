@@ -78,24 +78,18 @@ drafted, what you did with the draft.]
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs in your own words: how you searched, what your scan
-surfaced, what your scout's verdict said, why this issue fits your
-profile, and what you hope to learn. If your scout's verdict on it
-was reject and you chose it anyway, say so here and say why; choosing
-against your own tool silently is what loses points. Close with an
-honest read of the tool itself: where the scout fell short on a real
-wild search and what you changed or would change, or what convinced
-you it held up. **Record the link to your claim comment in this section too.**
-Not claimed yet? Write `claim pending` and today's date where the link goes,
-and add the link the moment your claim lands.]
+I mainly used the [Issue Selection site](https://open-source-issue-tracker.onrender.com/?language=Python&language=JavaScript&language=TypeScript&tag=easy&tag=good+first+issue&page=23) to find my issue. The scan did not help in this respect since it surfaced issues that I didn't prefer, either due to difficulty, low repo star count, etc. This issue fits my profile because it is very tightly scoped yet still contains an opportunity for me to learn. Ironically, it doesn't involve Python or JavaScript, my original preferred language when looking for an issue. Nonetheless, this issue is a great opportunity for me to learn GitHub workflow syntax and perhaps GraphQL.
+
+Originally, my scout rejected the issue since it saw my own claim comments and thought someone was already working on the issue. I adjusted the scout rubric to exclude myself when considering claim comments (as well as open PRs and assignees), and the scout accepted this issue. This was one shortcoming I found with the scout in the wild, an edge case that I didn't run into in the sandbox, where claim comments were more formal and posted after the rubric run. Now that I patched the edge case, it should work a bit better in the wild, though it could run into other problems that I haven't come across or anticipated yet.
+
+**Claim comment**: https://github.com/swisspost/design-system/issues/8480#issuecomment-6330381566
 
 **Toolkit**
 
-- Tool: issue-scout (your scout: your search strategy, your rubric),
-  and how you used it
-- What it produced: [the scan and its verdict on this issue, described]
-- Difficulties: [where it fell short, or "none met" if none did]
-- What changed: [what you patched or would update, or "nothing"]
+- Tool: issue-scout - used it to objectively confirm my issue pick fits my preferences
+- What it produced: verdict: pass on this issue, reject on others
+- Difficulties: due to overly strict wording, it rejected issues with my own claim comment
+- What changed: patched the problem noted above by excluding myself/my comments/PRs in the `not-worked-on` check
 
 ---
 
