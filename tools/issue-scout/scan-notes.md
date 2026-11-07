@@ -1,5 +1,13 @@
 # Scan Notes
 
+## 2026-11-07
+
+- Changes:
+  - Patched `scope-fits` rubric check with `scope-feasible` since real-world issues are rarely as
+    tidy as in the sandbox and would get rejected due to `scope-fits`
+  - Added a Difficulty Note section to output straightforward, moderate, or ambitious without
+    changing the verdict
+
 ## 2026-10-16
 
 - Observations:
