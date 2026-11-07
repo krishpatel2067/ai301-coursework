@@ -7,6 +7,7 @@
     tidy as in the sandbox and would get rejected due to `scope-fits`
   - Added a Difficulty Note section to output straightforward, moderate, or ambitious without
     changing the verdict
+  - Don't reject on `not-worked-on` if assignees is me or open PRs or claim comments are mine
 
 ## 2026-10-16
 

@@ -1,6 +1,78 @@
 # Scan Output
 
-## 2026-11-06 (Run 1)
+## 2026-11-06 (Run 2; exclude claim comments by me)
+
+Only #8480 is accepted. #379 and #380 are rejected, and both are already closed.
+
+Ranked read-out
+
+All three came in as direct URLs, so there was no search query or top-N ranking.
+
+1. swisspost/design-system#8480: accept
+- Maintainer active: pass. Recent commits reference issues or PRs, e.g. 2026-11-05 "fix(components): … (#8684)".
+- Repo in use: pass. Pushed today, not archived, latest release 2026-10-20.
+- Not worked on: pass. There are no assignees and no linked PRs. The only comments are yours (2026-10-22 and 2026-10-28), and a maintainer has not replied yet.
+- AI policy: pass. I found no AI ban in .github and no root CONTRIBUTING.md, and the repo has a copilot-instructions.md. Silence passes under the rubric.
+- Repo mature: pass. The repo was created in 2022 and has 181 stars.
+- Scope feasible: pass. It asks for one workflow that fills Hours Spent (h) from the estimate when the field is empty and the issue is set to done.
+- Fit: it is open, labelled good first issue, and has no assignees. I could not check whether it is locked, because gh does not expose that field.
+- Difficulty: moderate. You have to find where the workflow lives. It probably means GitHub Projects v2 field automation. The "tbd" PR-template checkbox is an open edge, which you already asked about.
+- Practical note: your claim comments are already on the issue, but the maintainer, oliverschuerch, has not answered in about two weeks. Waiting for their reply before building is worthwhile.
+
+2. DCGM/semant-demo#379: reject
+- Failed check: not-worked-on. It is assigned to omarekom and was fixed through PR #416, which closed it.
+- Failed check: repo-mature. The repo has 7 stars, under the 100 required.
+- Fit: the issue is closed.
+
+3. DCGM/semant-demo#380: reject
+- Failed check: not-worked-on. It is assigned to martinkostelnik, and a claim comment from Pratham2511 sits in the thread (2026-10-16).
+- Failed check: repo-mature. The repo has 7 stars, under the 100 required.
+- Fit: the issue is closed. A maintainer also said CI is not set up for external PRs (tracked in #393).
+
+Scan-notes friction: the rubric treats "other than mine" as the only exception for claim comments, which works for #8480. The two semant-demo issues were already closed, and "open" is only in the fit profile, not the rubric. Consider adding an issue-open required check.
+
+```json
+[
+  {
+    "item": "https://github.com/swisspost/design-system/issues/8480",
+    "checks": [
+      {"name": "maintainer-active", "grade": "pass", "evidence": "2026-11-05 commit 'fix(components): ... (#8684)'; commits within days and linked to issues/PRs"},
+      {"name": "repo-in-use", "grade": "pass", "evidence": "pushed 2026-11-07, not archived, latest release 2026-10-20"},
+      {"name": "not-worked-on", "grade": "pass", "evidence": "no assignees, no linked PRs; only comments are the user's own"},
+      {"name": "policy-allows-ai", "grade": "pass", "evidence": "no AI ban found in .github; no CONTRIBUTING AI section; copilot-instructions.md present"},
+      {"name": "repo-mature", "grade": "pass", "evidence": "created 2022-02-23, 181 stars"},
+      {"name": "scope-feasible", "grade": "pass", "evidence": "one workflow: autofill Hours Spent from Hours estimate when empty on done"}
+    ],
+    "verdict": "accept"
+  },
+  {
+    "item": "https://github.com/DCGM/semant-demo/issues/379",
+    "checks": [
+      {"name": "maintainer-active", "grade": "pass", "evidence": "2026-11-06 merges of PR #603/#604 referencing #596"},
+      {"name": "repo-in-use", "grade": "pass", "evidence": "pushed 2026-11-07, not archived, release v0.1.31 on 2026-11-03"},
+      {"name": "not-worked-on", "grade": "fail", "evidence": "assignee omarekom; closed via PR #416"},
+      {"name": "policy-allows-ai", "grade": "pass", "evidence": "no AI ban found in CONTRIBUTING.md"},
+      {"name": "repo-mature", "grade": "fail", "evidence": "7 stars (<100)"},
+      {"name": "scope-feasible", "grade": "pass", "evidence": "single bug with repro and root cause in popover close handling"}
+    ],
+    "verdict": "reject"
+  },
+  {
+    "item": "https://github.com/DCGM/semant-demo/issues/380",
+    "checks": [
+      {"name": "maintainer-active", "grade": "pass", "evidence": "2026-11-06 merges of PR #603/#604 referencing #596"},
+      {"name": "repo-in-use", "grade": "pass", "evidence": "pushed 2026-11-07, not archived, release v0.1.31 on 2026-11-03"},
+      {"name": "not-worked-on", "grade": "fail", "evidence": "assignee martinkostelnik; Pratham2511 claim comment 2026-10-16; issue closed"},
+      {"name": "policy-allows-ai", "grade": "pass", "evidence": "no AI ban found in CONTRIBUTING.md"},
+      {"name": "repo-mature", "grade": "fail", "evidence": "7 stars (<100)"},
+      {"name": "scope-feasible", "grade": "pass", "evidence": "one piece of work: sort tags and add a lightweight suggestion in AnnotationPopover"}
+    ],
+    "verdict": "reject"
+  }
+]
+```
+
+## 2026-11-06 (Run 1; rubric scope patch)
 
 None of the three issues is acceptable under the rubric as written. The direct run skipped search and ranking.
 
