@@ -1,4 +1,63 @@
-Scan results (2026-10-16)
+# Scan Output
+
+## 2026-11-06 (Run 1)
+
+None of the three issues is acceptable under the rubric as written. The direct run skipped search and ranking.
+
+Rejected, nearest miss first
+
+1. swisspost/design-system#8480 ("Create a workflow to autofill the hours field") fails not-worked-on.
+   - It is open, has no assignees, is unlocked, and carries the good first issue label.
+   - The repo is healthy. The newest commit is from 2026-11-05 and most recent commits cite issue numbers. The repo has 181 stars, was created in 2022, and its latest release is 2026-10-20. CONTRIBUTING.md says nothing about AI, and silence passes.
+   - The scope is one workflow, so it passes.
+   - The failure is that two claim comments rom 2026-10-22 and 2026-10-28. Both are yours (krishpatel2067), and neither has had a maintainer reply. The rubric reads a claim comment as someone else beon it and doesn't separate out your own
+   - Rubric tension: this is the case scan-notes.md is for. The check should probably exclude the candidate's own comments, or treat an unanswered claim t override it.
+2. DCGM/semant-demo#379 fails not-worked-on and repo-mature. It is closed and assigned to omarekom, with a closed       linked PR (#416). The repo has 7 stars, b
+3. DCGM/semant-demo#380 fails the same two checks. It is closed and assigned to martinkostelnik, and there is a claim   comment from Pratham2511. A maintainer saed yet and pointed to #393. It also has aclosed linked PR (#430). The repo has 7 stars.                                                                    
+Your fit profile requires an open issue with no assignees. #379 and #380 break both rules, though fit never changes averdict.
+
+```json
+[
+  {
+    "item": "https://github.com/swisspost/design-system/issues/8480",
+    "checks": [
+      {"name": "maintainer-active", "grade": "pass", "evidence": "Latest default-branch commit 2026-11-05; recent commits cite issues/PRs (#868x, #8767)"},
+      {"name": "repo-in-use", "grade": "pass", "evidence": "pushed 2026-11-07, not archived, latest release 2026-10-20"},
+      {"name": "not-worked-on", "grade": "fail", "evidence": "No assignees or linked PRs, but claim comments on 2026-10-22 and 2026-10-28 (within a month; both by krishpatel2067, unanswered)"},
+      {"name": "policy-allows-ai", "grade": "pass", "evidence": "CONTRIBUTING.md has no AI mention; silence passes"},
+      {"name": "repo-mature", "grade": "pass", "evidence": "Created 2022-02-23, 181 stars"},
+      {"name": "scope-feasible", "grade": "pass", "evidence": "One GitHub workflow: autofill 'Time Spent (h)' from 'Hours' when empty on done"}
+    ],
+    "verdict": "reject"
+  },
+  {
+    "item": "https://github.com/DCGM/semant-
+    "checks": [
+      {"name": "maintainer-active", "grade": 2026-11-06 referencing #596 and mergedPRs"},
+      {"name": "repo-in-use", "grade": "pass1-07, not archived, release v0.1.31 on2026-11-03"},
+      {"name": "not-worked-on", "grade": "faarekom; issue closed 2026-10-20; closedlinked PR #416"},
+      {"name": "policy-allows-ai", "grade": TING.md has no AI ban (AI mentions are onlyabout test fakes)"},
+      {"name": "repo-mature", "grade": "fail); created 2025-05-14"},
+      {"name": "scope-feasible", "grade": "pass", "evidence": "One bug with repro and root cause in AnnotationPopover
+close handling"}
+    ],
+    "verdict": "reject"
+  },
+  {
+    "item": "https://github.com/DCGM/semant-demo/issues/380",
+    "checks": [
+      {"name": "maintainer-active", "grade": "pass", "evidence": "Commits 2026-11-06 referencing #596 and merged     PRs"},
+      {"name": "repo-in-use", "grade": "pass", "evidence": "pushed 2026-11-07, not archived, release v0.1.31 on      2026-11-03"},
+      {"name": "not-worked-on", "grade": "fail", "evidence": "Assignee martinkostelnik; closed 2026-10-19; claim     comment 2026-10-16; closed linked PR #430"},
+      {"name": "policy-allows-ai", "grade": "pass", "evidence": "CONTRIBUTING.md has no AI ban"},                          {"name": "repo-mature", "grade": "fail)"},
+      {"name": "scope-feasible", "grade": "pass", "evidence": "One feature: alphabetical sort plus tag suggestion in AnnotationPopover"}
+    ],
+    "verdict": "reject"
+  }
+]
+```
+
+## 2026-10-16
 
 The scan found 92 unique issues from the two queries. 92 survived the ranking filters, and I graded the top 5. Ties on 0 comments and the "docs:" title preference were broken by the sort order I used (updatedAt, then URL), so the order among tied results is arbitrary.
 
