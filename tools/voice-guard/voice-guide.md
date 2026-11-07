@@ -1,4 +1,4 @@
-# Voice guide: how I talk upstream
+# Voice guide: how I talk upstream: how I talk to maintainers
 
 ## Who I am in threads
 
@@ -72,3 +72,45 @@ and stiff. Too many loses emphasis. A case-by-case call.
 - Casual text abbreviations ("idk", etc.) (not professional)
 - Specific deadline (looks bad if missed)
 - Anything in non-neutral tone (accusatory, gleeful, etc.) (not professional, potentially toxic)
+
+## Upstream: how I talk to maintainers
+
+### Claims I post
+
+#### Rule: Never Post an Explicit Timeframe
+
+Never give an explicit timeframe in the claim comment no matter how small or doable an issue looks.
+
+- Wrong: "I can complete this within a week."
+- Right: "I can complete this fairly quickly."
+
+#### Rule: Never Claim Over Someone's Claim
+
+Never post a claim comment if someone else already posted a claim.
+
+- Wrong: "[user123] Hi, I can work on this! (...) [me] Hello! I can take this issue. (...)."
+- Right: "[me] Hello! I can take this issue. (...)." (no one else's claim comment before mine)
+
+### Questions I ask
+
+#### Rule: 3 Questions Max in Paragraph Form
+
+Never post more than 3 questions max at a time when they're all bunched up in a paragraph. If there
+are more than 3, use bullet points.
+
+- Wrong: "Few questions: do I need to do X? How do you want me to test Y? What's your preference on
+  Z? What's the use case of W?"
+- Right: " Few questions
+- Do I need to do X?
+- How do you want me to test Y?
+- What's your preference on Z?
+- What's the use case of W? "
+
+### Pings I send
+
+#### Rule: Ping Only After 1 Week of Inactivity
+
+Wait at least 1 week before pinging the maintainer to check out your message, etc.
+
+- Wrong: "[3 days ago] Please check out X. [now] Following up: have you checked X yet?"
+- Right: "[1 week ago] Please check out X. [now] Following up: have you checked X yet?"
