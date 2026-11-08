@@ -374,7 +374,7 @@ security.
 
 ## Pull Request
 
-**PR Link:** https://github.com/swisspost/design-system/pull/8824
+**PR Link:** [#8824](https://github.com/swisspost/design-system/pull/8824)
 
 **PR Description:** see [pr-draft.md](./pr-draft.md).
 
