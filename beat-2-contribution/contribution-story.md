@@ -302,16 +302,30 @@ honest work; silent drift is not.]
 
 ## Testing Strategy
 
-[What observable checks prove the fix: your reproduction steps re-run against the built change
-(before and after), and the repo's own test suite or checks with the outcome shown. "Tests pass"
-with nothing observable named is not a strategy.]
+Since this issue was a non-user-facing feature request, the pre-implementation testing was minimal
+to none. However, I manually tested my implementation by creating a test GitHub project and various
+GitHub issues as follows:
+
+- "Time spent (h)" empty, "Hours" not empty -> fill "Time Spent (h)"
+- "Time spent (h)" not empty, "Hours" not empty -> skip
+- "Time spent (h)" not empty, "Hours" empty -> skip
+- "Time spent (h)" empty, "Hours" empty -> skip
+- no project tied to issue -> skip
+
+My manual testing yielded these expected results both after closing an issue (automatic trigger) and
+clicking "Run workflow" and entering the issue number.
+
+Note: I did not have to touch the production tests since I only worked in the `.github/` folder, not
+production code.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: some `Claude Code Opus 5.5` to provide info on setting up my testing.
+- What it produced: corrections to my assumptions (e.g. PATs, not fine-grained tokens) and things to
+  watch out for (e.g. updating `main` to update workflow).
+- Difficulties: initially hard-coded project name incorrectly skipped the field fill.
+- What changed: I had Claude update the workflow to derive the project name from the event issue
+  (see Implementation Notes), which works for any linked project, wether on my fork or upstream.
 
 ---
 
