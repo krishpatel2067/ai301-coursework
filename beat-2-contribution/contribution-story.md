@@ -7,9 +7,11 @@ repository is not read. **Keep every section header below under its exact name**
 criteria grade exactly that. Your course repo link is the whole submission: no tool files and no
 evidence uploads are part of Assignment 5.
 
-**Contribution Number:** 1 **Student:** Krish A. Patel **GitHub Username:** krishpatel2067
-**Issue:** https://github.com/swisspost/design-system/issues/8480 **Pull Request:** [GitHub PR link,
-once opened]
+- **Contribution Number:** 1
+- **Student:** Krish A. Patel
+- **GitHub Username:** krishpatel2067
+- **Issue:** [#8480](https://github.com/swisspost/design-system/issues/8480)
+- **Pull Request:** [#8824](https://github.com/swisspost/design-system/pull/8824)
 
 One repository, built across units 5 to 8, telling the whole story of your real contribution. Fill
 it as you work, not at the end — the sections below ask for evidence that is far easier to write
