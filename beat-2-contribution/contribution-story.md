@@ -157,7 +157,13 @@ Only `.github/workflows/`.
 **Environment Setup**
 
 No specific environment needed - just the `design-system` repo cloned locally and open in a text
-editor.
+editor. Thus, encountered no difficulties setting up.
+
+Nonetheless:
+
+- OS: Windows 11
+- Tools: Node 24.22.1, pnpm 12.18.0
+- Ran `pnpm bootstrap`.
 
 **Steps to Reproduce**
 
