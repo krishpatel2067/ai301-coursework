@@ -7,9 +7,11 @@ repository is not read. **Keep every section header below under its exact name**
 criteria grade exactly that. Your course repo link is the whole submission: no tool files and no
 evidence uploads are part of Assignment 5.
 
-**Contribution Number:** 1 **Student:** Krish A. Patel **GitHub Username:** krishpatel2067
-**Issue:** https://github.com/swisspost/design-system/issues/8480 **Pull Request:** [GitHub PR link,
-once opened]
+- **Contribution Number:** 1
+- **Student:** Krish A. Patel
+- **GitHub Username:** krishpatel2067
+- **Issue:** [#8480](https://github.com/swisspost/design-system/issues/8480)
+- **Pull Request:** [#8824](https://github.com/swisspost/design-system/pull/8824)
 
 One repository, built across units 5 to 8, telling the whole story of your real contribution. Fill
 it as you work, not at the end — the sections below ask for evidence that is far easier to write
@@ -80,10 +82,12 @@ doesn't exit with "command not found"). I also modified my `pr-precheck` rubric 
 automated testing with a stated reason, further reflecting that real world contribution is messier
 and full of exceptions than sandbox contribution.
 
-**Unit 8: [one line on the tool work]**
+**Unit 8: accurately silent PR monitor**
 
-[2-4 sentences: the PR-monitor and your playbook. What it read, what it drafted, what you did with
-the draft.]
+The PR monitor accurately suggested not to post or do anything: it hadn't been a week (my nudge
+threshold) yet since I posted my PR, there aren't any non-bot comments to respond to, and of course
+it hasn't been a month yet (my walk-away threshold) since I posted my PR. Thus, I didn't need to
+change anything because it outputted what I expected.
 
 ---
 
@@ -105,7 +109,8 @@ where claim comments were more formal and posted after the rubric run. Now that 
 case, it should work a bit better in the wild, though it could run into other problems that I
 haven't come across or anticipated yet.
 
-**Claim comment**: https://github.com/swisspost/design-system/issues/8480#issuecomment-6330381566
+**Claim comment**:
+[8480#-6330381566](https://github.com/swisspost/design-system/issues/8480#issuecomment-6330381566)
 
 **Toolkit**
 
@@ -284,15 +289,13 @@ left out; happy to do it as a follow-up if wanted.
 3. Test in my fork. `act` can't emit Projects events, so I'll make a personal Projects v2 board with
    the same two fields and my own token as a secret, then run via `workflow_dispatch` and by closing
    a test issue. Cases:
-   - empty (gets filled)
-   - filled (unchanged)
-   - "Hours" empty (skipped)
-   - issue not on the board (skipped).
+   - "Time spent (h)" empty, "Hours" not empty (fill)
+   - "Time spent (h)" not empty, "Hours" not empty (skip)
+   - "Time spent (h)" not empty, "Hours" empty (skip)
+   - "Time spent (h)" empty, "Hours" empty (skip)
+   - issue not on the board (skip)
 
    Run links will come in the PR.
-
-[Record deviations here as they happen: what changed mid-build and why. A recorded deviation is
-honest work; silent drift is not.]
 
 **Toolkit**
 
@@ -371,7 +374,7 @@ security.
 
 ## Pull Request
 
-**PR Link:** https://github.com/swisspost/design-system/pull/8824
+**PR Link:** [#8824](https://github.com/swisspost/design-system/pull/8824)
 
 **PR Description:** see [pr-draft.md](./pr-draft.md).
 
@@ -398,24 +401,53 @@ security.
 
 **Technical Skills Gained**
 
-[What you learned technically, named concretely.]
+- **GraphQL understanding** - Before the project, I knew no GraphQL. Now, I know enough to get a
+  gist of what my own snippet and related new snippets do. This was mainly thanks to Claude, who I
+  asked to break down the GraphQL queries in the newly implemented workflow by comparing and
+  contrasting it with SQL (which I knew much more).
+- **Pinning commit hash vs tag object hash** - When using pre-made scripts in workflows, my
+  intuition was that it was more "correct" to pin the release object hash (e.g. `v9`) rather than
+  the commit hash. However, I learned that pinning commit hash is actually more secure since commits
+  can't be changed whereas the actual object can be changed in the same version.
+- **More familiarity with workflows** - Before, I knew that GitHub workflows ran in their servers,
+  but this project deepened my understanding by introducing me to event-based triggers (e.g. PR
+  closed) and manual (e.g. clicking on "Run workflow").
 
 **Challenges Overcome**
 
-[What was hard and how you solved it; point at the real events, the Toolkit blocks above are full of
-them.]
+- **Rubrics not ready for the real world** - While I passed the earlier units by designing rubrics
+  to surpass the 18/20 eval bar, I realized that those rubrics were often too strict and didn't
+  anticipate some of the edge cases common to real-world contribution. I overcame this challenge by
+  tweaking the rubric (e.g. for `pr-precheck`) just enough to fit the situation but not water it
+  down too much.
+- **Technical gap** - I picked a very tightly scoped issue, but it still dealt with something I
+  wasn't familiar enough to go build myself. Luckily, with proper planning and guardrails, Claude
+  Code implemented the PR for me with little to no errors. I used that opportunity to learn the
+  implementation (e.g. GraphQL) to satisfy my curiosity and build my technical skills.
+- **Large repo** - I expected real-world repos to be large, but it was still initially challenging
+  to behold the entire repo. I suppressed my urge to look at everything and focused only on what I
+  needed, namely `.github/workflows/` along with logistical docs like `CONTRIBUTING.md`. While there
+  is a risk of missing something, I got to practice my searching skills (e.g. ensuring the workflow
+  I was about to implement wasn't already implemented) beyond just simple keyword matching, which I
+  expect to help me when dealing with more large repos in the future.
 
 **What I'd Do Differently Next Time**
 
-[Reflection on your process.]
+I would strongly consider installing my Claude skills in my home directory rather than the project
+directory. During units 1-4, my approach worked fine, but I didn't foresee having to manage and sync
+the skills between two repos (this one and one with my chosen issue). I was initially wary of
+loading stuff in my home directory only to forget about it and let it pile up, but the benefits of a
+central source of truth would have outweighed those negatives.
 
 ---
 
 ## Resources Used
 
-[What actually helped, not a reading list. List things this story already shows you using: the doc
-you followed to set the environment up, the thread that explained the bug, the person who answered
-you. One real entry beats ten plausible ones.]
-
-- [Link to documentation that helped]
-- [Discussion, issue, or post that helped]
+- [Why I SHA-Pin Every GitHub Action (and Automate Updates)](https://probl.me/blog/pin-github-actions-dependabot/) -
+  a small excerpt confirmed that pinning to commit hashes is more secure than pinning to release tag
+  object hash.
+- [act Installation via GitHub CLI](https://nektosact.com/installation/gh.html) - helped with
+  setting up `act` for the first time, even though I ended up not needing it.
+- Claude for breaking down the resulting workflow's GraphQL syntax. I don't understand it to the
+  level of writing it myself, but now I have a general idea of it that I can apply to more GraphQL
+  snippets.
