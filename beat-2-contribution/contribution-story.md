@@ -415,9 +415,11 @@ them.]
 
 ## Resources Used
 
-[What actually helped, not a reading list. List things this story already shows you using: the doc
-you followed to set the environment up, the thread that explained the bug, the person who answered
-you. One real entry beats ten plausible ones.]
-
-- [Link to documentation that helped]
-- [Discussion, issue, or post that helped]
+- [Why I SHA-Pin Every GitHub Action (and Automate Updates)](https://probl.me/blog/pin-github-actions-dependabot/) -
+  a small excerpt confirmed that pinning to commit hashes is more secure than pinning to release tag
+  object hash.
+- [act Installation via GitHub CLI](https://nektosact.com/installation/gh.html) - helped with
+  setting up `act` for the first time, even though I ended up not needing it.
+- Claude for breaking down the resulting workflow's GraphQL syntax. I don't understand it to the
+  level of writing it myself, but now I have a general idea of it that I can apply to more GraphQL
+  snippets.
