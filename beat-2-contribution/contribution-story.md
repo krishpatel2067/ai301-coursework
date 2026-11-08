@@ -334,7 +334,15 @@ My manual testing yielded these expected results both after closing an issue (au
 clicking "Run workflow" and entering the issue number.
 
 Note: I did not have to touch the production tests since I only worked in the `.github/` folder, not
-production code.
+production code. However, I did run the unit tests (via `pnpm unit`) on my branch like the PR
+template asked to, with these results (matching `main`):
+
+- `packages/eslint`: 7655/7655 pass
+- `packages/icons`: 74/74 pass
+- `packages/components`: 237/237 pass
+- `packages/internet-header`: 99/99 pass
+- `apps/documentation`: (no unit tests)
+- `apps/integration-next`: 10/10 pass
 
 **Toolkit**
 
