@@ -80,10 +80,12 @@ doesn't exit with "command not found"). I also modified my `pr-precheck` rubric 
 automated testing with a stated reason, further reflecting that real world contribution is messier
 and full of exceptions than sandbox contribution.
 
-**Unit 8: [one line on the tool work]**
+**Unit 8: accurately silent PR monitor**
 
-[2-4 sentences: the PR-monitor and your playbook. What it read, what it drafted, what you did with
-the draft.]
+The PR monitor accurately suggested not to post or do anything: it hadn't been a week (my nudge
+threshold) yet since I posted my PR, there aren't any non-bot comments to respond to, and of course
+it hasn't been a month yet (my walk-away threshold) since I posted my PR. Thus, I didn't need to
+change anything because it outputted what I expected.
 
 ---
 
