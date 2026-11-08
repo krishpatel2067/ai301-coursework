@@ -243,6 +243,9 @@ packages/internet-header/CHANGELOG.md:
 
 ## Solution Approach
 
+Here's the plan. New contributor here, so I've listed my assumptions below. Happy to adjust before I
+start.
+
 **Analysis**
 
 No workflow under `.github/workflows/` touches the Projects board, so nothing copies the "Hours"
