@@ -371,24 +371,26 @@ security.
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when opened]
+**PR Link:** https://github.com/swisspost/design-system/pull/8824
 
-**PR Description:** [what the PR says; much of the content above adapts into it]
+**PR Description:** see [pr-draft.md](./pr-draft.md).
 
 **Maintainer Feedback:**
 
-- [Date]: [feedback received, or "none yet"; silence is a normal state and costs you nothing]
-- [Date]: [how you addressed it]
+- 2026-11-08: Posted PR; no feedback yet
 
-**Status:** [Awaiting review / Iterating / Merged / Closed. The status is a fact you record, never a
-grade: the PR is graded as opened.]
+**Status:** Awaiting review
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: `Claude Code` - used to post my PR.
+- What it produced: it posted my PR with modifications upstream.
+- Difficulties: the ship gate hook failed due to it not being able to find my `pr_draft.md` file
+  (despite it being in the project root), and Claude on auto mode posted my PR nonetheless (and
+  upstream too even though I deliberately kept `gh repo` to my fork for testing) with modifications
+  (e.g. removing emojis that were part of the PR template) without asking me.
+- What changed: after it posted my PR, I immediately updated the body with my `pr_draft.md` (e.g.
+  bringing back the template emojis).
 
 ---
 
