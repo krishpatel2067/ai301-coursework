@@ -69,10 +69,16 @@ The repo-memory file was fairly simple to write. The only difficult part was out
 process since I the repo instructed me to use `act`, which I had no former experience with. Some
 quick research unblocked me, but I'll confirm with Claude whether my commands outlined are sound.
 
-**Unit 7: [one line on the tool work]**
+**Unit 7: dealing with a strict ship gate**
 
-[2-4 sentences: the ship-gate and your gate manifest. What it produced on your real branch, what
-fought you, what changed because of it.]
+The ship gate was quite strict because it relied on a `pr-precheck`'s rubric I had designed for
+user-facing bug-related PRs, so it could not adjust with my non-user-facing feature-related PR. For
+example, since the PR involved creating a GitHub workflow dealing with GitHub projects, the repo's
+recommendation of `act` for locally testing workflows didn't apply. So, I had to put `echo "N/A"` in
+the ship gate manifest to reflect that I had to manually test my feature (the `echo` so the hook
+doesn't exit with "command not found"). I also modified my `pr-precheck` rubric to allow "N/A" for
+automated testing with a stated reason, further reflecting that real world contribution is messier
+and full of exceptions than sandbox contribution.
 
 **Unit 8: [one line on the tool work]**
 
