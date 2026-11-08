@@ -47,9 +47,11 @@ for a design review.
 
 - ✅ My code follows the style guidelines of this project
 - 🛠️ I have performed a self-review of my own code
-- ~~📄 I have made corresponding changes to the documentation~~ (**N/A** - as far as I know, workflows aren't documented separately)
+- ~~📄 I have made corresponding changes to the documentation~~ (**N/A** - as far as I know,
+  workflows aren't documented separately)
 - ⚠️ My changes generate no new warnings or errors
-- ~~🧪 I have added tests that prove my fix is effective or that my feature works~~ (**N/A** - manual testing needed)
+- ~~🧪 I have added tests that prove my fix is effective or that my feature works~~ (**N/A** -
+  manual testing needed)
 - ✔️ ~~New and~~ Existing unit tests pass locally with my changes
 
 ## Other Info
@@ -64,8 +66,9 @@ Key assumptions:
   whether I should use a different token.
 
 Note:
-- I didn't add a checkbox to the PR template to fill out "Hours" as it was marked as "(tbd)",
-and I didn't receive a response to my question on the issue thread about that.
+
+- I didn't add a checkbox to the PR template to fill out "Hours" as it was marked as "(tbd)", and I
+  didn't receive a response to my question on the issue thread about that.
 - I didn't add a changeset since I didn't touch any packages.
 
 Disclosure: I used Claude Opus 5.5 for planning and implementation, but I reviewed the final work
