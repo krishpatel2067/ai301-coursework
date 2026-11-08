@@ -157,7 +157,13 @@ Only `.github/workflows/`.
 **Environment Setup**
 
 No specific environment needed - just the `design-system` repo cloned locally and open in a text
-editor.
+editor. Thus, encountered no difficulties setting up.
+
+Nonetheless:
+
+- OS: Windows 11
+- Tools: Node 24.22.1, pnpm 12.18.0
+- Ran `pnpm bootstrap`.
 
 **Steps to Reproduce**
 
@@ -243,6 +249,9 @@ packages/internet-header/CHANGELOG.md:
 
 ## Solution Approach
 
+Here's the plan. New contributor here, so I've listed my assumptions below. Happy to adjust before I
+start.
+
 **Analysis**
 
 No workflow under `.github/workflows/` touches the Projects board, so nothing copies the "Hours"
@@ -325,7 +334,15 @@ My manual testing yielded these expected results both after closing an issue (au
 clicking "Run workflow" and entering the issue number.
 
 Note: I did not have to touch the production tests since I only worked in the `.github/` folder, not
-production code.
+production code. However, I did run the unit tests (via `pnpm unit`) on my branch like the PR
+template asked to, with these results (matching `main`):
+
+- `packages/eslint`: 7655/7655 pass
+- `packages/icons`: 74/74 pass
+- `packages/components`: 237/237 pass
+- `packages/internet-header`: 99/99 pass
+- `apps/documentation`: (no unit tests)
+- `apps/integration-next`: 10/10 pass
 
 **Toolkit**
 
