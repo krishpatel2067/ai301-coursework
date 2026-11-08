@@ -71,7 +71,7 @@ can be ready; a rubric that equates "less than everything" with
 
 **Check**: `tested`
 **Evidence**: Issue, repro evidence, candidate plan, PR
-**Pass condition**: PR must show that the change works, either through an automated testing suite or manually. The tests must match the test plan in the candidate plan.
+**Pass condition**: PR must show that the change works, either through an automated testing suite or manually. "N/A" for automated testing is acceptable with a compelling reason. The tests must match the test plan in the candidate plan, if provided.
 **Weight**: `required`
 
 **Check**: `clean-diff`

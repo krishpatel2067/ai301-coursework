@@ -1,5 +1,7 @@
 # Voice guide: how I talk upstream
 
+My voice guide now lives at `.claude/voice-guard/voice-guide.md` (relative to the repo root); read it there.
+
 <!--
 THIS IS THE PART YOU WRITE (new this week). Live mode reads this file
 before any comment of yours goes out the door; eval mode ignores it

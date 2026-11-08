@@ -69,10 +69,16 @@ The repo-memory file was fairly simple to write. The only difficult part was out
 process since I the repo instructed me to use `act`, which I had no former experience with. Some
 quick research unblocked me, but I'll confirm with Claude whether my commands outlined are sound.
 
-**Unit 7: [one line on the tool work]**
+**Unit 7: dealing with a strict ship gate**
 
-[2-4 sentences: the ship-gate and your gate manifest. What it produced on your real branch, what
-fought you, what changed because of it.]
+The ship gate was quite strict because it relied on a `pr-precheck`'s rubric I had designed for
+user-facing bug-related PRs, so it could not adjust with my non-user-facing feature-related PR. For
+example, since the PR involved creating a GitHub workflow dealing with GitHub projects, the repo's
+recommendation of `act` for locally testing workflows didn't apply. So, I had to put `echo "N/A"` in
+the ship gate manifest to reflect that I had to manually test my feature (the `echo` so the hook
+doesn't exit with "command not found"). I also modified my `pr-precheck` rubric to allow "N/A" for
+automated testing with a stated reason, further reflecting that real world contribution is messier
+and full of exceptions than sandbox contribution.
 
 **Unit 8: [one line on the tool work]**
 
@@ -115,26 +121,29 @@ haven't come across or anticipated yet.
 
 **Problem Description**
 
-[In your own words, what is broken or missing?]
+What is missing: a GitHub workflow to automatically fill the "Hours" field based on the "Time Spent
+(h)" field (check repro steps for confirmation of this).
 
 **Expected Behavior**
 
-[What should happen?]
+There should be a GitHub workflow that auto-fills the "Hours" field based on the "Time Spent (h)"
+field.
 
 **Current Behavior**
 
-[What actually happens?]
+There is currently no GitHub workflow in `.github/workflows/` that auto-fills the "Hours" field
+based on the "Time Spent (h)" field.
 
 **Affected Components**
 
-[Which parts of the codebase are involved?]
+Only `.github/workflows/`.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: no tool used to understand the issue
+- What it produced: N/A
+- Difficulties: N/A
+- What changed: N/A
 
 ---
 
@@ -231,88 +240,157 @@ packages/internet-header/CHANGELOG.md:
 
 **Analysis**
 
-[Your analysis of the root cause: what is causing the issue, traced to the files and functions
-involved.]
+No workflow under `.github/workflows/` touches the Projects board, so nothing copies the "Hours"
+estimate into "Time Spent (h)" when an issue is done.
 
 **Proposed Solution**
 
-[High-level description of your fix approach, and what you are deliberately NOT changing.]
+Add one new workflow, `.github/workflows/autofill-time-spent.yaml` (`.yaml` matches the other
+workflows). When an issue is closed (moved to Done), it will:
+
+1. Find the issue's item on the Projects v2 board.
+2. Read its "Time Spent (h)" and "Hours" values.
+3. If "Time Spent (h)" is filled, do nothing. If it's empty, set it to the "Hours" value.
+
+Decisions:
+
+- **Trigger:** `issues: closed`, plus `workflow_dispatch` (takes an issue number) for manual runs
+  and testing. Actions has no trigger for Projects v2 item changes, so closing the issue is the
+  closest signal to "set to done".
+- **Auth:** the default `GITHUB_TOKEN` can't write to an org-level Projects v2 board, so the
+  workflow needs a token with the `project` scope. I will use `SWISSPOSTDEVS_ACCESS_TOKEN` secret
+  since other workflows use that (happy to change it if you want).
+- **IDs:** nothing hardcoded. The script looks up the project, item and field IDs by name at run
+  time.
+- **Field names:** "Time Spent (h)" and "Hours". Both are constants at the top of the script, so a
+  rename is a one-line change.
+- **Implementation:** `actions/github-script` (already used in `label-stale-review-prs.yaml`) with
+  GraphQL calls, rather than using the raw `gh api`.
+- **Skipped:** if the item isn't on the board, or "Hours" is empty, log a message and exit without
+  failing.
+
+**Scope**
+
+Only the new workflow file. No other files, no production code. The "(tbd)" PR template checkbox is
+left out; happy to do it as a follow-up if wanted.
 
 **Implementation Plan**
 
-1. [Modify file X to do Y]
-2. [Add or change Z]
-3. [Update tests]
+1. Create `.github/workflows/autofill-time-spent.yaml` with the trigger above, minimal
+   `permissions`, and the token secret.
+2. Write the script: query the issue's project item and the two field values; stop if "Time Spent
+   (h)" is filled; otherwise run the `updateProjectV2ItemFieldValue` mutation with the "Hours"
+   value.
+3. Test in my fork. `act` can't emit Projects events, so I'll make a personal Projects v2 board with
+   the same two fields and my own token as a secret, then run via `workflow_dispatch` and by closing
+   a test issue. Cases:
+   - empty (gets filled)
+   - filled (unchanged)
+   - "Hours" empty (skipped)
+   - issue not on the board (skipped).
+
+   Run links will come in the PR.
 
 [Record deviations here as they happen: what changed mid-build and why. A recorded deviation is
 honest work; silent drift is not.]
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: `plan-check` - used to check whether my plan and plan comment are ready to post.
+- What it produced: it rejected my plan twice reasonably; after overhauling my plan, it accepted.
+- Difficulties: it rejected my plan the first time due to getting the direction of the "Hours" ->
+  "Time Spent (h)" wrong, then it rejected the second time due to my plan being vague and
+  technically inaccurate.
+- What changed: I used Claude to get more accurate technical details on the solution and added those
+  details to my plan.
 
 ---
 
 ## Testing Strategy
 
-[What observable checks prove the fix: your reproduction steps re-run against the built change
-(before and after), and the repo's own test suite or checks with the outcome shown. "Tests pass"
-with nothing observable named is not a strategy.]
+Since this issue was a non-user-facing feature request, the pre-implementation testing was minimal
+to none. However, I manually tested my implementation by creating a test GitHub project and various
+GitHub issues as follows:
+
+- "Time spent (h)" empty, "Hours" not empty -> fill "Time Spent (h)"
+- "Time spent (h)" not empty, "Hours" not empty -> skip
+- "Time spent (h)" not empty, "Hours" empty -> skip
+- "Time spent (h)" empty, "Hours" empty -> skip
+- no project tied to issue -> skip
+
+My manual testing yielded these expected results both after closing an issue (automatic trigger) and
+clicking "Run workflow" and entering the issue number.
+
+Note: I did not have to touch the production tests since I only worked in the `.github/` folder, not
+production code.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: some `Claude Code Opus 5.5` to provide info on setting up my testing.
+- What it produced: corrections to my assumptions (e.g. PATs, not fine-grained tokens) and things to
+  watch out for (e.g. updating `main` to update workflow).
+- Difficulties: initially hard-coded project name incorrectly skipped the field fill.
+- What changed: I had Claude update the workflow to derive the project name from the event issue
+  (see Implementation Notes), which works for any linked project, wether on my fork or upstream.
 
 ---
 
 ## Implementation Notes
 
-[A running log, added to as you work. Date each entry. What you built, decisions you made when you
-made them, wrong turns included.]
+**2026-11-07**
 
-**[Date]**
+Built the initial workflow in `.github/workflows/autofill-time-spent.yaml`.
 
-[Entry]
+**2026-11-07**
 
-**[Date]**
+Reduced over-engineering by assuming that event issue is only part of 1 project (reasonable since
+the org has a single project).
 
-[Entry]
+**2026-11-07**
+
+Substituted hard coded project with event issue's linked project, if any.
+
+**2026-11-07**
+
+Switched `github-script` to v9 (latest) from v7 (using deprecated Node 20).
+
+**2026-11-07**
+
+Opted for the commit SHA for `github-script` v9 rather than the tagged object SHA for improved
+security.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: `Claude Code Opus 5.5` to generate `autofill-time-spent.yaml` based on my plan.
+- What it produced: the initial script and the subsequent revisions listed above.
+- Difficulties: due to gaps in my plan, it over-engineered project searching by assuming an issue
+  can appear in multiple projects.
+- What changed: I re-prompted Claude to assume up to 1 project per issue to simplify the script.
 
 ---
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when opened]
+**PR Link:** https://github.com/swisspost/design-system/pull/8824
 
-**PR Description:** [what the PR says; much of the content above adapts into it]
+**PR Description:** see [pr-draft.md](./pr-draft.md).
 
 **Maintainer Feedback:**
 
-- [Date]: [feedback received, or "none yet"; silence is a normal state and costs you nothing]
-- [Date]: [how you addressed it]
+- 2026-11-08: Posted PR; no feedback yet
 
-**Status:** [Awaiting review / Iterating / Merged / Closed. The status is a fact you record, never a
-grade: the PR is graded as opened.]
+**Status:** Awaiting review
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: `Claude Code` - used to post my PR.
+- What it produced: it posted my PR with modifications upstream.
+- Difficulties: the ship gate hook failed due to it not being able to find my `pr_draft.md` file
+  (despite it being in the project root), and Claude on auto mode posted my PR nonetheless (and
+  upstream too even though I deliberately kept `gh repo` to my fork for testing) with modifications
+  (e.g. removing emojis that were part of the PR template) without asking me.
+- What changed: after it posted my PR, I immediately updated the body with my `pr_draft.md` (e.g.
+  bringing back the template emojis).
 
 ---
 
