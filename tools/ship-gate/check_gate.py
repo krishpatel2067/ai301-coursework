@@ -71,7 +71,7 @@ MODEL = "sonnet"
 # where install.py puts it), the same convention as the unit-6 guard:
 # the runner's home is the .claude directory it sits in.
 GATE_DIR = Path(__file__).resolve().parent
-CLAUDE_DIR = GATE_DIR.parent
+CLAUDE_DIR = Path('.claude/')
 LOG_PATH = GATE_DIR / "gate-log.md"
 TEMPLATE_PATH = GATE_DIR / "gate-manifest-template.md"
 TOOL_DIR = CLAUDE_DIR / "skills" / "pr-precheck"
