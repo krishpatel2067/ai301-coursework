@@ -51,6 +51,6 @@ left out; happy to do it as a follow-up if wanted.
    - "Time spent (h)" not empty, "Hours" not empty (skip)
    - "Time spent (h)" not empty, "Hours" empty (skip)
    - "Time spent (h)" empty, "Hours" empty (skip)
-   - issue not on the board (skip).
+   - issue not on the board (skip)
 
    Run links will come in the PR.
