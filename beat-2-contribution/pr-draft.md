@@ -63,8 +63,10 @@ Key assumptions:
   some of the other workflows. Please confirm if that is a PAT and has `project` write access, or
   whether I should use a different token.
 
-Note: I didn't add a checkbox to the PR template to fill out "Hours" as it was marked as "(tbd)",
+Note:
+- I didn't add a checkbox to the PR template to fill out "Hours" as it was marked as "(tbd)",
 and I didn't receive a response to my question on the issue thread about that.
+- I didn't add a changeset since I didn't touch any packages.
 
 Disclosure: I used Claude Opus 5.5 for planning and implementation, but I reviewed the final work
 myself.
