@@ -400,16 +400,43 @@ security.
 
 **Technical Skills Gained**
 
-[What you learned technically, named concretely.]
+- **GraphQL understanding** - Before the project, I knew no GraphQL. Now, I know enough to get a
+  gist of what my own snippet and related new snippets do. This was mainly thanks to Claude, who I
+  asked to break down the GraphQL queries in the newly implemented workflow by comparing and
+  contrasting it with SQL (which I knew much more).
+- **Pinning commit hash vs tag object hash** - When using pre-made scripts in workflows, my
+  intuition was that it was more "correct" to pin the release object hash (e.g. `v9`) rather than
+  the commit hash. However, I learned that pinning commit hash is actually more secure since commits
+  can't be changed whereas the actual object can be changed in the same version.
+- **More familiarity with workflows** - Before, I knew that GitHub workflows ran in their servers,
+  but this project deepened my understanding by introducing me to event-based triggers (e.g. PR
+  closed) and manual (e.g. clicking on "Run workflow").
 
 **Challenges Overcome**
 
-[What was hard and how you solved it; point at the real events, the Toolkit blocks above are full of
-them.]
+- **Rubrics not ready for the real world** - While I passed the earlier units by designing rubrics
+  to surpass the 18/20 eval bar, I realized that those rubrics were often too strict and didn't
+  anticipate some of the edge cases common to real-world contribution. I overcame this challenge by
+  tweaking the rubric (e.g. for `pr-precheck`) just enough to fit the situation but not water it
+  down too much.
+- **Technical gap** - I picked a very tightly scoped issue, but it still dealt with something I
+  wasn't familiar enough to go build myself. Luckily, with proper planning and guardrails, Claude
+  Code implemented the PR for me with little to no errors. I used that opportunity to learn the
+  implementation (e.g. GraphQL) to satisfy my curiosity and build my technical skills.
+- **Large repo** - I expected real-world repos to be large, but it was still initially challenging
+  to behold the entire repo. I suppressed my urge to look at everything and focused only on what I
+  needed, namely `.github/workflows/` along with logistical docs like `CONTRIBUTING.md`. While there
+  is a risk of missing something, I got to practice my searching skills (e.g. ensuring the workflow
+  I was about to implement wasn't already implemented) beyond just simple keyword matching, which I
+  expect to help me when dealing with more large repos in the future.
 
 **What I'd Do Differently Next Time**
 
-[Reflection on your process.]
+I would strongly consider installing my Claude skills in my home directory rather than the project
+directory. During units 1-4, my approach worked fine, but I didn't foresee having to manage and sync
+the skills between two repos (this one and one with my chosen issue). I was initially wary of
+loading stuff in my home directory only to forget about it and let it pile up, but the benefits of a
+central source of truth would have outweighed those negatives.
 
 ---
 
