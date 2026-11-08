@@ -109,7 +109,7 @@ where claim comments were more formal and posted after the rubric run. Now that 
 case, it should work a bit better in the wild, though it could run into other problems that I
 haven't come across or anticipated yet.
 
-**Claim comment**: https://github.com/swisspost/design-system/issues/8480#issuecomment-6330381566
+**Claim comment**: [8480#-6330381566](https://github.com/swisspost/design-system/issues/8480#issuecomment-6330381566)
 
 **Toolkit**
 
