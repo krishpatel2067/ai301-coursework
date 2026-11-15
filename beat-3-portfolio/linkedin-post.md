@@ -16,7 +16,8 @@ It was a tightly scoped issue, but I still learned a lot throughout the process:
   objective as possible to keep grading consistent across runs.
 
 - Contribution etiquette: As an outside contributor on a repo, I learned the importance of following
-  CONTRIBUTING.md closely, respecting repo conventions, and keeping communication professional.
+  the contribution guidelines closely, respecting repo conventions, and keeping communication
+  professional.
 
 As of now, the PR is still open with no maintainer feedback yet. However, this isn't the end: I plan
 to consistently monitor the thread to address any comments and make necessary changes.
