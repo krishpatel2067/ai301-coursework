@@ -236,7 +236,7 @@ index 526e3ef0e..113f09fb0 100644
 ```
 
 However, I learned that pinning commit hashes is more secure than pinning object hashes because
-objects can be swapped out but commits are fixed. Hence, I again iterated to pin `github-scripts` to
+objects can be swapped out but commits are fixed. Hence, I again iterated to pin `github-script` to
 v9, but this time using the commit hash:
 
 ```diff
