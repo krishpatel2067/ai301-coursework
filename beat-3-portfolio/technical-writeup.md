@@ -268,9 +268,11 @@ my work described above is that I learned to:
 One major limitation is that, in attempt to keep the workflow simple and reduce over-engineering, it
 isn't well-equipped against changes to the project fields. For example, if "Time Spent (h)" were
 accidentally renamed to "Time spent (h)", my script would silently exit without erroring. One of the
-key engineering decisions is the tradeoff of complexity vs functionality, and I accept this
-limitation (unless a maintainer asks me to fix that) since the repo's GitHub project is stable and
-used predictably.
+key engineering decisions is the tradeoff of complexity vs functionality.
 
-My next steps include monitoring the PR daily to check its status (e.g. whether a maintainer left
-feedback, it got merged, etc.).
+My next steps:
+
+- Add back that guard against no "Time Spent (h)" field for easier beginning.
+- Add a new guard against no "Hours" field to read from.
+- Monitor the PR daily to check its status (e.g. whether a maintainer left feedback, it got merged,
+  etc.).
