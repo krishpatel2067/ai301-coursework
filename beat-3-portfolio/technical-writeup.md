@@ -41,7 +41,7 @@ Test cases with GitHub action output:
 
 ![GitHub action output for non-empty "Time Spent (h)", non-empty "Hours"](./assets/not-empty-not-empty-output.png)
 
-**4. "Hours" is empty; "Time Spent (h)" empty**
+**4. "Time Spent (h)" is empty; "Hours" is empty**
 
 ![GitHub action output for empty "Time Spent (h)", empty "Hours"](./assets/empty-empty-output.png)
 
@@ -112,8 +112,6 @@ index dfebe1a33..526e3ef0e 100644
 +              core.info(`#${issueNumber} is not on project ${PROJECT_OWNER}/${PROJECT_NUMBER}. Skipping.`);
                return;
              }
-
-## Limitations and what's next
 ```
 
 However, this is over-engineering since most issues aren't part of more than several projects.
@@ -209,8 +207,8 @@ index 32a2b1d40..2ede94b83 100644
 ```
 
 I decided to remove it since the upstream repo's project (and its fields) is relatively stable, and
-I didn't the worth in keeping an if-statement that would almost never run. Besides, it is a small
-fix later on if the field name does change: simply update the `SPENT_FIELD` constant.
+I didn't see the worth in keeping an if-statement that would almost never run. Besides, it is a
+small fix later on if the field name does change: simply update the `SPENT_FIELD` constant.
 
 ### Iterated over use of `github-script`
 
@@ -235,9 +233,9 @@ index 526e3ef0e..113f09fb0 100644
          with:
 ```
 
-However, I learned that pinning commit hashes is more secure than pinning object hashes because
-objects can be swapped out but commits are fixed. Hence, I again iterated to pin `github-scripts` to
-v9, but this time using the commit hash:
+However, I learned that pinning full commit hashes is more secure than pinning a version tag hash
+because the tag can move. Hence, I again iterated to pin `github-script` to v9, but this time using
+the commit hash:
 
 ```diff
 diff --git a/.github/workflows/autofill-time-spent.yaml b/.github/workflows/autofill-time-spent.yaml
@@ -270,9 +268,11 @@ my work described above is that I learned to:
 One major limitation is that, in attempt to keep the workflow simple and reduce over-engineering, it
 isn't well-equipped against changes to the project fields. For example, if "Time Spent (h)" were
 accidentally renamed to "Time spent (h)", my script would silently exit without erroring. One of the
-key engineering decisions is the tradeoff of complexity vs functionality, and I accept this
-limitation (unless a maintainer asks me to fix that) since the repo's GitHub project is stable and
-used predictably.
+key engineering decisions is the tradeoff of complexity vs functionality.
 
-My next steps include monitoring the PR daily to check its status (e.g. whether a maintainer left
-feedback, it got merged, etc.).
+My next steps:
+
+- Add back that guard against no "Time Spent (h)" field for easier beginning.
+- Add a new guard against no "Hours" field to read from.
+- Monitor the PR daily to check its status (e.g. whether a maintainer left feedback, it got merged,
+  etc.).
