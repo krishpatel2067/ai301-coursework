@@ -7,7 +7,8 @@ as initially expected unless otherwise stated.
 
 It was a tightly scoped issue, but I still learned a lot throughout the process:
 
-- GraphQL: I went from having zero experience to some readability, enough for understanding my
+- GraphQL: This is a querying language that lets clients ask exactly for the data they need - no
+  more, no less. I went from having zero experience to some readability, enough for understanding my
   contribution but an inviting launchpad for a deeper dive of the language in the future.
 
 - Claude skills: With some existing scaffolding, I built skills to grade an issue's fit to my
