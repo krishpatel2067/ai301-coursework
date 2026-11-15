@@ -233,9 +233,9 @@ index 526e3ef0e..113f09fb0 100644
          with:
 ```
 
-However, I learned that pinning commit hashes is more secure than pinning object hashes because
-objects can be swapped out but commits are fixed. Hence, I again iterated to pin `github-script` to
-v9, but this time using the commit hash:
+However, I learned that pinning full commit hashes is more secure than pinning a version tag hash
+because the tag can move. Hence, I again iterated to pin `github-script` to v9, but this time using
+the commit hash:
 
 ```diff
 diff --git a/.github/workflows/autofill-time-spent.yaml b/.github/workflows/autofill-time-spent.yaml
