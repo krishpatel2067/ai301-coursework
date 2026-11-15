@@ -209,8 +209,8 @@ index 32a2b1d40..2ede94b83 100644
 ```
 
 I decided to remove it since the upstream repo's project (and its fields) is relatively stable, and
-I didn't the worth in keeping an if-statement that would almost never run. Besides, it is a small
-fix later on if the field name does change: simply update the `SPENT_FIELD` constant.
+I didn't see the worth in keeping an if-statement that would almost never run. Besides, it is a
+small fix later on if the field name does change: simply update the `SPENT_FIELD` constant.
 
 ### Iterated over use of `github-script`
 
