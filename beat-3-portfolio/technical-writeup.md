@@ -112,8 +112,6 @@ index dfebe1a33..526e3ef0e 100644
 +              core.info(`#${issueNumber} is not on project ${PROJECT_OWNER}/${PROJECT_NUMBER}. Skipping.`);
                return;
              }
-
-## Limitations and what's next
 ```
 
 However, this is over-engineering since most issues aren't part of more than several projects.
