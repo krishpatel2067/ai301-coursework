@@ -41,7 +41,7 @@ Test cases with GitHub action output:
 
 ![GitHub action output for non-empty "Time Spent (h)", non-empty "Hours"](./assets/not-empty-not-empty-output.png)
 
-**4. "Hours" is empty; "Time Spent (h)" empty**
+**4. "Time Spent (h)" is empty; "Hours" is empty**
 
 ![GitHub action output for empty "Time Spent (h)", empty "Hours"](./assets/empty-empty-output.png)
 
