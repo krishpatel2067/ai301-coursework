@@ -1,5 +1,3 @@
-# LinkedIn Post
-
 The past few weeks, I opened a fix for my first open-source contribution. I built a new GitHub
 workflow for the repository swisspost/design-system that automatically fills in an issue's actual
 time spent from the estimated time when the issue gets closed. This means that an issue took as long
